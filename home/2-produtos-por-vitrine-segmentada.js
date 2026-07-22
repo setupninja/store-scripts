@@ -1,0 +1,3 @@
+if (!window.ft2lkdmna29){
+    document.addEventListener("DOMContentLoaded",()=>{const e=$(".vitrine-pcs-gamer-starter .products-tabs-slider , .vitrine-pcs-gamer-advanced .owl-carousel , .vitrine-pcs-gamer-legend .owl-carousel , .vitrine-pcs-completo-starter .products-tabs-slider , .vitrine-pcs-completo-advanced .owl-carousel , .vitrine-pcs-completo-legend .owl-carousel ");e.length&&e.each(function(){const e=$(this);e.data("owl.carousel")&&e.trigger("destroy.owl.carousel"),e.owlCarousel({items:2,responsive:{0:{items:1},360:{items:2},480:{items:2},640:{items:3},768:{items:3},992:{items:3},1220:{items:4},1366:{items:5},1440:{items:5}}})})});
+}
