@@ -1282,7 +1282,9 @@ table.fps-table {
 
                 "PLACA DE VÍDEO SETUP NINJA": "A placa de vídeo cuida dos gráficos, deixando jogos e vídeos mais bonitos e rodando de forma suave.",
 
-                "PLACA MÃE SETUP NINJA": "A placa-mãe é o componente central que conecta todos os dispositivos do computador. Conta com slots de expansão, portas de entrada e saída, e suporte para os principais periféricos necessários ao funcionamento do sistema."
+                "PLACA MÃE SETUP NINJA": "A placa-mãe é o componente central que conecta todos os dispositivos do computador. Conta com slots de expansão, portas de entrada e saída, e suporte para os principais periféricos necessários ao funcionamento do sistema.",
+
+                "32GB": "O Kit de Memória 32GB DDR4 (2x16GB) em dual channel garante mais velocidade e fluidez para jogos e multitarefa. Ideal para quem busca desempenho consistente sem gargalos no dia a dia ou nas sessões de jogo."
             };
 
             const images = {
@@ -1383,6 +1385,7 @@ table.fps-table {
                 "Square": "Gabinete " + selectedPc.name.split(" ")[0],
                 "MidTower": "Gabinete " + selectedPc.name.split(" ")[0],
                 "GB1787": "Gabinete " + selectedPc.name.split(" ")[0],
+                "GabineteThermaltake": "View 380",
                 "Ryzen": "Processador AMD " + selectedPc.cpu,
                 "Intel": "Processador Intel Core " + selectedPc.cpu.split("Intel")[1],
                 "HD Graphics": selectedPc.gpu,
