@@ -1154,6 +1154,9 @@ table.fps-table {
                 //return;
             }
 
+            console.log("SELECTEDPC: ")
+            console.log(selectedPc)
+
             const hora = new Date().getHours()
             let periodo
             if (hora >= 5 && hora <= 11) {
