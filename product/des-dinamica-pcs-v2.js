@@ -1043,66 +1043,66 @@ table.fps-table {
 
                 // POR SKU
                 {
-                    name: "17543218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17543218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    name: "17643218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17643218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    name: "17543214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17543214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    name: "17643214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17643214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 
                 
                 {
-                    name: "17643213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17643213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    name: "17543213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17543213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    name: "17541618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17541618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    name: "17641618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17641618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 
                 
                 {
-                    name: "17641614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17641614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    name: "17541614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17541614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    name: "17541613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17541613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    name: "17641613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    sku: "17641613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
