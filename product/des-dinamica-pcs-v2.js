@@ -1151,7 +1151,7 @@ table.fps-table {
                 // Preserva o objeto de `data` e usa o título apenas em tempo de execução.
                 if (selectedPc && !selectedPc.name) {
                     console.log(`ENTROU FIND 2 ${selectedPc}`)
-                    selectedPc = { ...selectedPc, name: pcNameFromTitle }
+                    selectedPc = { ...selectedPc, name: sku }
                 }
 
                 console.log(`FIM FIND 1 ${selectedPc}`)
