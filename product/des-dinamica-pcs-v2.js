@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     const docTitle = document.title.toLowerCase().trim()
     const pcsNamesExceptions = ["pc gamer square"]
     const isException = pcsNamesExceptions.some(exception => docTitle.includes(exception))
@@ -13,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ?.textContent
         ?.replace(/^REF:\s*/i, "")
         ?.trim()
+    
+    console.log(`SKU PC GAMER DESC ${sku}`)
 
     let finished = false;
     let lastRun = 0;
