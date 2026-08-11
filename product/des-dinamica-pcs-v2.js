@@ -1322,11 +1322,12 @@ table.fps-table {
 
                 "RTX 5060 Ti": "rtx-5060-ti-8gb-generica.png",
 
-                "RTX 5070": "rtx-5070-generica-wrcsr.png",
+                "RTX 5070": "rtx-5070-generica-ouxeq.png",
 
                 "8GB": "umaram.png",
 
                 "16GB": "duasram.png",
+                "32GB": "32gbduasmemorias-znouc.png",
 
                 "AquarioBranco": "gb1797-transparente.png",
 
@@ -1344,7 +1345,7 @@ table.fps-table {
 
                 "MidTowerBranco": "gb1793-transparente.png",
 
-                "GabineteThermaltake": "gabinete-thermaltake-umgfg.png",
+                "GabineteThermaltake": "gabinete-thermaltake-lspcl.png",
 
                 "GABINETE SETUP NINJA": "gb1796-transparente.png",
 
