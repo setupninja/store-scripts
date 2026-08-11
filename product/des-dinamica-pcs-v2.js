@@ -1135,20 +1135,30 @@ table.fps-table {
 
             // Se nenhum nome estiver no título, procura um item cuja chave `sku`
             // corresponda ao SKU exibido na página. Esse item não precisa ter `name`.
+
+            console.log(`SELECTED PC ANTES ${selectedPc}`)
+
             if (!selectedPc && normalizedSku) {
+                console.log("ENTROU FIND 1")
                 selectedPc = data.find(pc =>
                     pc.sku != null &&
                     String(pc.sku).trim().toLowerCase() === normalizedSku
                 )
 
+                console.log(`SELECTED POS FIND ${selectedPc}`)
+
                 // O restante do script usa `name` para textos de exibição.
                 // Preserva o objeto de `data` e usa o título apenas em tempo de execução.
                 if (selectedPc && !selectedPc.name) {
+                    console.log(`ENTROU FIND 2 ${selectedPc}`)
                     selectedPc = { ...selectedPc, name: pcNameFromTitle }
                 }
+
+                console.log(`FIM FIND 1 ${selectedPc}`)
             }
 
             if (!selectedPc) {
+                console.log(`ENTROU FIND 2 ${selectedPc}`)
                 selectedPc = data.find(item => item.name === "SETUP NINJA")
                 // /\ tentativa de fallback acima. Se quebrar, apague /\ e descomente \/:
                 //return;
