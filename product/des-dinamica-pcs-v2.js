@@ -1043,66 +1043,66 @@ table.fps-table {
 
                 // POR SKU
                 {
-                    sku: "17543218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17543218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    sku: "17643218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17643218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    sku: "17543214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17543214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    sku: "17643214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17643214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 
                 
                 {
-                    sku: "17643213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17643213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    sku: "17543213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17543213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    sku: "17541618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17541618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    sku: "17641618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17641618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 
                 
                 {
-                    sku: "17641614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17641614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    sku: "17541614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17541614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    sku: "17541613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17541613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    sku: "17641613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias:"By Thermaltake", sku: "17641613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
@@ -1179,12 +1179,6 @@ table.fps-table {
                 periodo = "Boa noite!"
             }
             const linkWhatsaapp = `https://api.whatsapp.com/send?l=pt_br&phone=5521980115833&text=${periodo} Gostaria de saber mais informações sobre o Pc gamer ${selectedPc.name}`
-
-
-
-
-
-
 
             const ramRegex = /\b(\d+)\s*GB\s*RAM\b/i;
             const ddrRegex = /\b(\d+)\s*GB\s*DDR/i;
@@ -1456,7 +1450,7 @@ table.fps-table {
             const mainDesc = {
                 "B": `
 <p>
-Conheça o PC Gamer ${selectedPc.name}, desenvolvido para quem deseja entrar no universo dos games sem abrir mão da qualidade. Equipado com um ${getLabel(selectedPc.cpu)} e ${selectedPc.ram} de memória RAM, ele garante a execução fluida de jogos leves e intermediários, além de oferecer um bom desempenho para multitarefas.
+Conheça o PC Gamer ${selectedPc.alias || selectedPc.name}, desenvolvido para quem deseja entrar no universo dos games sem abrir mão da qualidade. Equipado com um ${getLabel(selectedPc.cpu)} e ${selectedPc.ram} de memória RAM, ele garante a execução fluida de jogos leves e intermediários, além de oferecer um bom desempenho para multitarefas.
 </p>
 
 <p>
@@ -1464,13 +1458,13 @@ O SSD integrado assegura carregamentos ágeis e um sistema sempre pronto para o 
 </p>
 
 <p>
-A ${getLabel(selectedPc.gpu)} presente neste modelo entrega gráficos consistentes para games casuais e competitivos, tornando o PC Gamer ${selectedPc.name} a escolha ideal para quem busca custo-benefício e confiabilidade. Descubra abaixo todos os detalhes deste computador da Setup Ninja.
+A ${getLabel(selectedPc.gpu)} presente neste modelo entrega gráficos consistentes para games casuais e competitivos, tornando o PC Gamer ${selectedPc.alias || selectedPc.name} a escolha ideal para quem busca custo-benefício e confiabilidade. Descubra abaixo todos os detalhes deste computador da Setup Ninja.
 </p>
 `,
 
                 "A": `
 <p>
-Apresentamos o PC Gamer ${selectedPc.name}, pensado para jogadores que buscam equilíbrio entre desempenho e valor. Com um ${getLabel(selectedPc.cpu)} aliado a ${selectedPc.ram} de memória RAM, este setup garante performance estável em jogos modernos e aplicações multitarefa sem dificuldades.
+Apresentamos o PC Gamer ${selectedPc.alias || selectedPc.name}, pensado para jogadores que buscam equilíbrio entre desempenho e valor. Com um ${getLabel(selectedPc.cpu)} aliado a ${selectedPc.ram} de memória RAM, este setup garante performance estável em jogos modernos e aplicações multitarefa sem dificuldades.
 </p>
 
 <p>
@@ -1478,14 +1472,14 @@ O SSD integrado assegura carregamentos ágeis e um sistema sempre pronto para o 
 </p>
 
 <p>
-A ${getLabel(selectedPc.gpu)} fornece qualidade gráfica sólida, com excelente fluidez em resoluções Full HD. O PC Gamer ${selectedPc.name} é perfeito para quem quer dar o próximo passo no mundo gamer, unindo potência e preço competitivo. Veja abaixo todas as especificações deste modelo Setup Ninja.
+A ${getLabel(selectedPc.gpu)} fornece qualidade gráfica sólida, com excelente fluidez em resoluções Full HD. O PC Gamer ${selectedPc.alias || selectedPc.name} é perfeito para quem quer dar o próximo passo no mundo gamer, unindo potência e preço competitivo. Veja abaixo todas as especificações deste modelo Setup Ninja.
 </p>
 `,
 
 
                 "S": `
     <p>
-Apresentamos o PC Gamer ${selectedPc.name}, equipado com um ${getLabel(selectedPc.cpu)} e ${selectedPc.ram} de memória RAM. Esta máquina gamer garante performance de alto nível para títulos pesados e aplicações demandantes. Além disso, sua ampla capacidade de memória RAM assegura multitarefa estável e ágil.
+Apresentamos o PC Gamer ${selectedPc.alias || selectedPc.name}, equipado com um ${getLabel(selectedPc.cpu)} e ${selectedPc.ram} de memória RAM. Esta máquina gamer garante performance de alto nível para títulos pesados e aplicações demandantes. Além disso, sua ampla capacidade de memória RAM assegura multitarefa estável e ágil.
 </p>
 
 <p>
@@ -1493,7 +1487,7 @@ Com SSD atuando como unidade principal de armazenamento, proporciona inicializa�
 </p>
 
 <p>
-Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.name} entrega gráficos impressionantes e alta fluidez, oferecendo uma experiência de gameplay totalmente envolvente e imersiva. Confira abaixo mais informações sobre este poderoso computador gamer da Setup Ninja:
+Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || selectedPc.name} entrega gráficos impressionantes e alta fluidez, oferecendo uma experiência de gameplay totalmente envolvente e imersiva. Confira abaixo mais informações sobre este poderoso computador gamer da Setup Ninja:
 </p>
     `
             }
@@ -1501,7 +1495,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.name} entr
 
 
             const caractsPcTitle = document.querySelector('.caracts-pc-title')
-            caractsPcTitle.innerHTML = `CARACTERÍSTICAS DO PC GAMER ${selectedPc.name}`
+            caractsPcTitle.innerHTML = `CARACTERÍSTICAS DO PC GAMER ${selectedPc.alias || selectedPc.name}`
 
             const mainPcDescription = document.querySelector('.main-pc-description')
             mainPcDescription.innerHTML = mainDesc[selectedPc.tier]
