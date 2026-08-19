@@ -1045,6 +1045,11 @@ table.fps-table {
                         "-GYV5mvNpLs", !0
                     ]
                 },
+                {
+                    name: "Kirk III", cpu: "Ryzen 5 5500", gpu: "RX 580", fonte: "500W", mobo: "A520", gabinete: "MidTowerPreto", tier: "A", fps: [
+                        "dYf0JYRy1Dg", !0
+                    ]
+                },
 
                 // POR SKU
                 {
@@ -2216,6 +2221,17 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "fortnite": 80,
                         "valorant": 300,
                         "cs2": 350
+                    },
+                    "Kirk III": {
+                        "gta5": 70,
+                        "warzone": 100,
+                        "hogwarts legacy": 60,
+                        "red dead 2": 60,
+                        "cyberpunk 2077": 40,
+                        "bf6":  70,
+                        "fortnite": 180,
+                        "valorant": 250,
+                        "cs2": 150
                     },
                     // POR SKU -- RTX 5070
                     "17543218718PR": {
