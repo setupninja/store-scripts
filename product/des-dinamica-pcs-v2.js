@@ -2187,13 +2187,13 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                     "Pegasus I": {
                         "gta5": 90,
                         "warzone": 60,
-                        "spiderman 2": 65,
-                        "red dead 2": 75,
-                        "bf2042": 75,
+                        "spiderman 2": 60,
+                        "red dead 2": 70,
+                        "bf2042": 70,
                         "cyberpunk 2077": 70,
-                        "fortnite": 110,
+                        "fortnite": 100,
                         "valorant": 550,
-                        "cs2": 175
+                        "cs2": 150
                     },
                     "Pegasus II": {
                         "gta5": 180,
@@ -2219,138 +2219,138 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                     },
                     // POR SKU -- RTX 5070
                     "17543218718PR": {
-                        "gta5": 87,
+                        "gta5": 90,
                         "warzone": 150,
-                        "hogwarts legacy": 130,
+                        "hogwarts legacy": 120,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 101, 
-                        "bf6": 210,
-                        "fortnite": 186,
-                        "valorant": 520,
+                        "cyberpunk 2077": 100, 
+                        "bf6": 200,
+                        "fortnite": 190,
+                        "valorant": 500,
                         "cs2": 450
                     },
                     "17643218718PR": {
-                        "gta5": 87,
+                        "gta5": 90,
                         "warzone": 150,
                         "hogwarts legacy": 130,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 101, 
-                        "bf6": 210,
-                        "fortnite": 186,
-                        "valorant": 520,
+                        "cyberpunk 2077": 100, 
+                        "bf6": 200,
+                        "fortnite": 190,
+                        "valorant": 500,
                         "cs2": 450
                     },
                     "17541618718PR": {
-                        "gta5": 87,
+                        "gta5": 90,
                         "warzone": 150,
-                        "hogwarts legacy": 130,
+                        "hogwarts legacy": 120,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 101, 
-                        "bf6": 210,
-                        "fortnite": 186,
-                        "valorant": 520,
+                        "cyberpunk 2077": 100, 
+                        "bf6": 200,
+                        "fortnite": 190,
+                        "valorant": 500,
                         "cs2": 450
                     },
                     "17641618718PR": {
-                        "gta5": 87,
+                        "gta5": 90,
                         "warzone": 150,
-                        "hogwarts legacy": 130,
+                        "hogwarts legacy": 120,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 101, 
-                        "bf6": 210,
-                        "fortnite": 186,
-                        "valorant": 520,
+                        "cyberpunk 2077": 100, 
+                        "bf6": 200,
+                        "fortnite": 190,
+                        "valorant": 500,
                         "cs2": 450
                     },
                     // t1 -- RTX 5060 Ti
                     "17543214718PR": {
-                        "gta5": 85,
+                        "gta5": 90,
                         "warzone": 120,
-                        "hogwarts legacy": 87,
+                        "hogwarts legacy": 90,
                         "red dead 2": 100,
                         "cyberpunk 2077": 120, 
-                        "bf6": 110,
-                        "fortnite": 276,
-                        "valorant": 480,
+                        "bf6": 120,
+                        "fortnite": 280,
+                        "valorant": 500,
                         "cs2": 290
                     },
                     "17643214718PR": {
-                        "gta5": 85,
+                        "gta5": 90,
                         "warzone": 120,
-                        "hogwarts legacy": 87,
+                        "hogwarts legacy": 90,
                         "red dead 2": 100,
                         "cyberpunk 2077": 120, 
-                        "bf6": 110,
-                        "fortnite": 276,
-                        "valorant": 480,
+                        "bf6": 100,
+                        "fortnite": 280,
+                        "valorant": 500,
                         "cs2": 290
                     },
                     "17641614718PR": {
-                        "gta5": 85,
+                        "gta5": 90,
                         "warzone": 120,
-                        "hogwarts legacy": 87,
+                        "hogwarts legacy": 90,
                         "red dead 2": 100,
                         "cyberpunk 2077": 120, 
-                        "bf6": 110,
-                        "fortnite": 276,
-                        "valorant": 480,
+                        "bf6": 120,
+                        "fortnite": 280,
+                        "valorant": 500,
                         "cs2": 290
                     },
                     "17541614718PR": {
-                        "gta5": 85,
+                        "gta5": 90,
                         "warzone": 120,
-                        "hogwarts legacy": 87,
+                        "hogwarts legacy": 90,
                         "red dead 2": 100,
                         "cyberpunk 2077": 120, 
-                        "bf6": 110,
-                        "fortnite": 276,
-                        "valorant": 480,
+                        "bf6": 120,
+                        "fortnite": 280,
+                        "valorant": 500,
                         "cs2": 290
                     },
                     // t2 -- RTX 5060
                     "17643213718PR": {
                         "gta5": 90,
-                        "warzone": 0,
-                        "hogwarts legacy": 65,
-                        "red dead 2": 75,
+                        "warzone": 90,
+                        "hogwarts legacy": 50,
+                        "red dead 2": 80,
                         "cyberpunk 2077": 80, 
-                        "bf6": 130,
-                        "fortnite": 235,
-                        "valorant": 440,
-                        "cs2": 310
+                        "bf6": 120,
+                        "fortnite": 220,
+                        "valorant": 450,
+                        "cs2": 300
                     },
                     "17543213718PR": {
                         "gta5": 90,
-                        "warzone": 0,
-                        "hogwarts legacy": 65,
-                        "red dead 2": 75,
+                        "warzone": 90,
+                        "hogwarts legacy": 50,
+                        "red dead 2": 80,
                         "cyberpunk 2077": 80, 
-                        "bf6": 130,
-                        "fortnite": 235,
-                        "valorant": 440,
-                        "cs2": 310
+                        "bf6": 120,
+                        "fortnite": 240,
+                        "valorant": 450,
+                        "cs2": 300
                     },
                     "17541613718PR": {
                         "gta5": 90,
-                        "warzone": 0,
-                        "hogwarts legacy": 65,
-                        "red dead 2": 75,
+                        "warzone": 90,
+                        "hogwarts legacy": 70,
+                        "red dead 2": 80,
                         "cyberpunk 2077": 80, 
-                        "bf6": 130,
-                        "fortnite": 235,
-                        "valorant": 440,
-                        "cs2": 310
+                        "bf6": 120,
+                        "fortnite": 220,
+                        "valorant": 450,
+                        "cs2": 300
                     },
                     "17641613718PR": {
                         "gta5": 90,
-                        "warzone": 0,
-                        "hogwarts legacy": 65,
-                        "red dead 2": 75,
+                        "warzone": 90,
+                        "hogwarts legacy": 70,
+                        "red dead 2": 80,
                         "cyberpunk 2077": 80, 
-                        "bf6": 130,
-                        "fortnite": 235,
-                        "valorant": 440,
-                        "cs2": 310
+                        "bf6": 120,
+                        "fortnite": 220,
+                        "valorant": 450,
+                        "cs2": 300
                     },
                 }
 
@@ -2499,3 +2499,8 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
     });
     observer.observe(document.body, { childList: true, subtree: true });
 });
+
+
+
+
+
