@@ -1026,6 +1026,11 @@ table.fps-table {
                     ]
                 },
                 {
+                    name: "Pegasus II", cpu: "Ryzen 5 5500X3D", gpu: "RX 6600", fonte: "500W80+", mobo: "A520", gabinete: "AquarioPreto", tier: "S", fps: [
+                        "Mvhw77cbu5s", !0
+                    ]
+                },
+                {
                     name: "Pegasus I", cpu: "Ryzen 5 5500X3D", gpu: "RX 580", fonte: "500W80+", mobo: "A520", gabinete: "AquarioPreto", tier: "S", fps: [
                         "Mvhw77cbu5s", !0
                     ]
@@ -2180,6 +2185,17 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "cs2": 250
                     },
                     "Pegasus I": {
+                        "gta5": 90,
+                        "warzone": 60,
+                        "spiderman 2": 65,
+                        "red dead 2": 75,
+                        "bf2042": 75,
+                        "cyberpunk 2077": 70,
+                        "fortnite": 110,
+                        "valorant": 550,
+                        "cs2": 175
+                    },
+                    "Pegasus II": {
                         "gta5": 180,
                         "warzone": 170,
                         "spiderman 2": 120,
