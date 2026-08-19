@@ -1032,7 +1032,7 @@ table.fps-table {
                 },
                 {
                     name: "Pegasus I", cpu: "Ryzen 5 5500X3D", gpu: "RX 580", fonte: "500W80+", mobo: "A520", gabinete: "AquarioPreto", tier: "S", fps: [
-                        "Mvhw77cbu5s", !0
+                        "o4TKySGVVAk", !0
                     ]
                 },
                 {
