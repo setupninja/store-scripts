@@ -2507,7 +2507,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
 
         <p class="illustrative-image-txt">Obs.: As imagens utilizadas no anúncio são apenas ilustrativas.</p>
         `
-                caractsPc.appendChild(observationsContainer)
+            caractsPc.appendChild(observationsContainer)
 
             finished = true;
             observer.disconnect();
@@ -2515,8 +2515,3 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
     });
     observer.observe(document.body, { childList: true, subtree: true });
 });
-
-
-
-
-
