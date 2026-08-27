@@ -216,7 +216,7 @@
 
 .qa-modal-detail {
   position: relative;
-  font-family: "Inter", "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   border: 1px solid var(--orange_setup, #FD771033);
   background: var(--offblack, #171717);
@@ -366,7 +366,7 @@ background: var(--primary_light, #171717);
   color: #6b6b72;
   text-align: center;
   padding: 20px 0;
-  font-family: "Inter", "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 
