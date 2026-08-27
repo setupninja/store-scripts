@@ -288,7 +288,9 @@ line-height: 1.2;
 
 .caracts-pc .benefit h2 {
     font-size: clamp(15px, 2.2vw, 20px);
-    margin: 0;
+    font-family: 'Barlow Condensed';
+    margin: 5px 0;
+    font-weight: bolder;
 }
 
 .caracts-pc .benefit p {
@@ -312,7 +314,7 @@ line-height: 1.2;
 .caracts-pc .observations {
     background: radial-gradient(circle, rgba(38, 38, 38, 1) 0%, rgba(66, 66, 66, 1) 100%);
     border-radius: 12px;
-    padding: 0px 4vw;
+    padding: 5px 4vw;
     border: 1px solid rgb(125, 125, 125);
     box-shadow: 0 4px 15px rgb(0 0 0);
     text-align: center;
@@ -386,10 +388,10 @@ line-height: 1.2;
 #fps-obs {
     font-size: 12px;
     color: gray;
-    margin-top: -10px;
+    margin: 10px;
 }
 
-.caracts-pc h1 {
+.caracts-pc-title, #confira-desempenho {
     margin: 0;
     font-size: clamp(20px, 2.2vw, 40px) !important;
     text-align: center;
@@ -730,7 +732,7 @@ table.fps-table {
 
 </section>
 
-<h1 class="caracts-pc-title">CARACTERÍSTICAS DO PC GAMER</h1>
+<h2 class="caracts-pc-title">CARACTERÍSTICAS DO PC GAMER</h2>
 
 </section>
     `);
@@ -2428,7 +2430,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
     `).join("")
 
                 fpsContainer.innerHTML = `   
-<h1 id="confira-desempenho">CONFIRA O DESEMPENHO DESSE PC NOS <span>SEUS JOGOS FAVORITOS!</span></h1>
+<h2 id="confira-desempenho">CONFIRA O DESEMPENHO DESSE PC NOS <span>SEUS JOGOS FAVORITOS!</span></h2>
 
 <div class="main-section">
 
