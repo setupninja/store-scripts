@@ -45,7 +45,7 @@ line-height: 1.2;
 }
 
 .caracts-pc {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Inter', sans-serif !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,7 +143,7 @@ line-height: 1.2;
 
 .caract-highlight-desc p {
     text-align: center;
-    font-family: "Open Sans", sans-serif !important;
+    font-family: "Inter", sans-serif !important;
     line-height: 1.3;
 }
 
@@ -203,7 +203,7 @@ line-height: 1.2;
 }
 
 .caract-container .caract-text p {
-    font-family: "Open Sans", sans-serif !important;
+    font-family: "Inter", sans-serif !important;
     font-weight: 900 !important;
     padding: 0 10px 10px 10px !important;
     text-align: justify !important;
@@ -211,7 +211,7 @@ line-height: 1.2;
 
 .caract-text h2 {
     text-align: center;
-    font-family: "Poppins", sans-serif !important;
+    font-family: "Inter", sans-serif !important;
     font-weight: bold !important;
     font-style: normal !important;
     text-transform: uppercase !important;
@@ -295,7 +295,7 @@ line-height: 1.2;
 
 .caracts-pc .benefit p {
     font-size: clamp(14px, 2vw, 10px);
-    font-family: 'Open Sans' !important;
+    font-family: 'Inter' !important;
 }
 
 .caracts-pc .benefit p span {
@@ -308,7 +308,7 @@ line-height: 1.2;
 
 .main-pc-description {
     font-size: 16px;
-    font-family: 'Open Sans';
+    font-family: 'Inter';
 }
 
 .caracts-pc .observations {
@@ -320,7 +320,7 @@ line-height: 1.2;
     text-align: center;
     font-size: 12px;
     font-weight: 900 !important;
-    font-family: 'Open Sans';
+    font-family: 'Inter';
 }
 
 .caracts-pc .observations a {
@@ -395,7 +395,7 @@ line-height: 1.2;
     margin: 0;
     font-size: clamp(20px, 2.2vw, 40px) !important;
     text-align: center;
-    font-family: Poppins, sans-serif;
+    font-family: Inter, sans-serif;
     font-weight: bold;
 
     background: linear-gradient(270deg, #ff7300, #ffcc00);
@@ -413,7 +413,7 @@ table.fps-table {
     border: 1px solid rgb(125, 125, 125);
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    font-family: Poppins, sans-serif;
+    font-family: Inter, sans-serif;
     color: white;
     margin: 20px auto;
 }
