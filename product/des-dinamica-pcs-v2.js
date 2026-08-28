@@ -211,7 +211,7 @@ line-height: 1.2;
 
 .caract-text h2 {
     text-align: center;
-    font-family: "Inter", sans-serif !important;
+    font-family: "Barlow Condensed", sans-serif !important;
     font-weight: bold !important;
     font-style: normal !important;
     text-transform: uppercase !important;
@@ -219,6 +219,7 @@ line-height: 1.2;
     padding: 0 3px 0 3px !important;
     margin-block-start: 0.5em !important;
     margin-block-end: 0.5em !important;
+    font-size: 26px !important;
 }
 
 .first-row-containers {
