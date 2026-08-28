@@ -204,7 +204,7 @@ line-height: 1.2;
 
 .caract-container .caract-text p {
     font-family: "Inter", sans-serif !important;
-    font-weight: 900 !important;
+    font-weight: 500 !important;
     padding: 0 10px 10px 10px !important;
     text-align: justify !important;
 }
