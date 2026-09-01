@@ -328,9 +328,8 @@ line-height: 1.2;
     color: #ff7300;
 }
 
-.caracts-pc-title {
+section.caracts-pc .caracts-pc-title {
     text-align: center !important;
-    font-size: clamp(30px, 2.2vw, 40px) !important;
     text-transform: uppercase !important;
 }
 
@@ -394,9 +393,9 @@ line-height: 1.2;
 
 .caracts-pc-title, #confira-desempenho {
     margin: 0;
-    font-size: clamp(20px, 2.2vw, 40px) !important;
+    font-size: clamp(40px, 2.2vw, 40px) !important;
     text-align: center;
-    font-family: Inter, sans-serif;
+    font-family: Barlow Condensed, sans-serif !important;
     font-weight: bold;
 
     background: linear-gradient(270deg, #ff7300, #ffcc00);
