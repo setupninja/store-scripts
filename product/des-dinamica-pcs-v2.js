@@ -135,6 +135,8 @@ line-height: 1.2;
     text-align: center;
     width: 80%;
     margin: 0 !important;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
 }
 
 .caract-highlight-desc {
@@ -143,8 +145,8 @@ line-height: 1.2;
 
 .caract-highlight-desc p {
     text-align: center;
-    font-family: "Inter", sans-serif !important;
-    line-height: 1.3;
+    font-family: 'Barlow', sans-serif !important;
+    line-height: 1;
 }
 
 .caract-highlight-container .caract-highlight img {
@@ -320,7 +322,7 @@ line-height: 1.2;
     box-shadow: 0 4px 15px rgb(0 0 0);
     text-align: center;
     font-size: 12px;
-    font-weight: 900 !important;
+    font-weight: 500 !important;
     font-family: 'Inter';
 }
 
@@ -413,7 +415,7 @@ table.fps-table {
     border: 1px solid rgb(125, 125, 125);
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    font-family: Inter, sans-serif;
+    font-family: 'Barlow', sans-serif;
     color: white;
     margin: 20px auto;
 }
