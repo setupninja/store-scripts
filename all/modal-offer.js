@@ -3,6 +3,11 @@ class OfferModal extends HTMLElement {
         super()
         this.attachShadow({ mode: "open" })
 
+        this.modalPopupProducts = null;
+        this.actualPromotion = null;
+        this.fileImgPrefix = null;
+        this.fetchGlobalConfig();
+
         this.shadowRoot.innerHTML = `
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -357,6 +362,7 @@ class OfferModal extends HTMLElement {
             this.close();
         });
 
+        this.fetchGlobalConfig();
         this.render();
 
         
@@ -377,9 +383,7 @@ class OfferModal extends HTMLElement {
                 if (!this.canShowExitIntent || this.hasShownModal) return;
 
                 if (event.clientY <= 0 || !event.relatedTarget) {
-                    this.hasShownModal = true;
                     this.open();
-                    document.removeEventListener("mouseleave", this.handleMouseLeave);
                 }
             };
 
@@ -412,47 +416,90 @@ class OfferModal extends HTMLElement {
         }).format(Number(value));
     }
 
-    render() {
-        if (typeof MODAL_POPUP_PRODUCTS === "undefined" || typeof ACTUAL_PROMOTION === "undefined" || typeof FILE_IMG_PREFIX === "undefined") {
-            return;
+    fetchGlobalConfig() {
+        if (!this.actualPromotion) {
+            if (typeof ACTUAL_PROMOTION !== "undefined") {
+                this.actualPromotion = ACTUAL_PROMOTION;
+            } else if (typeof window !== "undefined" && typeof window.ACTUAL_PROMOTION !== "undefined") {
+                this.actualPromotion = window.ACTUAL_PROMOTION;
+            }
         }
 
-        if (ACTUAL_PROMOTION.primaryColor) {
-            this.style.setProperty("--primary-color", ACTUAL_PROMOTION.primaryColor);
+        if (!this.modalPopupProducts) {
+            if (typeof MODAL_POPUP_PRODUCTS !== "undefined") {
+                this.modalPopupProducts = MODAL_POPUP_PRODUCTS;
+            } else if (typeof window !== "undefined" && typeof window.MODAL_POPUP_PRODUCTS !== "undefined") {
+                this.modalPopupProducts = window.MODAL_POPUP_PRODUCTS;
+            }
         }
-        if (ACTUAL_PROMOTION.secondaryColor) {
-            this.style.setProperty("--secondary-color", ACTUAL_PROMOTION.secondaryColor);
+
+        if (this.fileImgPrefix === null || this.fileImgPrefix === undefined) {
+            if (typeof FILE_IMG_PREFIX !== "undefined") {
+                this.fileImgPrefix = FILE_IMG_PREFIX;
+            } else if (typeof window !== "undefined" && typeof window.FILE_IMG_PREFIX !== "undefined") {
+                this.fileImgPrefix = window.FILE_IMG_PREFIX;
+            }
         }
-        if (ACTUAL_PROMOTION.rectColor) {
-            this.style.setProperty("--rect-color", ACTUAL_PROMOTION.rectColor);
+
+        return this.hasGlobalConfig();
+    }
+
+    hasGlobalConfig() {
+        return Boolean(
+            this.modalPopupProducts &&
+            this.actualPromotion &&
+            (this.fileImgPrefix !== null && this.fileImgPrefix !== undefined)
+        );
+    }
+
+    render() {
+        if (!this.hasGlobalConfig()) {
+            this.fetchGlobalConfig();
+            if (!this.hasGlobalConfig()) {
+                return;
+            }
         }
-        if (ACTUAL_PROMOTION.shadowColor) {
-            this.style.setProperty("--shadow-color", ACTUAL_PROMOTION.shadowColor);
-            this.style.setProperty("--border-color", `${ACTUAL_PROMOTION.shadowColor}66`);
+
+        const actualPromotion = this.actualPromotion;
+        const modalPopupProducts = this.modalPopupProducts;
+        const fileImgPrefix = this.fileImgPrefix;
+
+        if (actualPromotion.primaryColor) {
+            this.style.setProperty("--primary-color", actualPromotion.primaryColor);
+        }
+        if (actualPromotion.secondaryColor) {
+            this.style.setProperty("--secondary-color", actualPromotion.secondaryColor);
+        }
+        if (actualPromotion.rectColor) {
+            this.style.setProperty("--rect-color", actualPromotion.rectColor);
+        }
+        if (actualPromotion.shadowColor) {
+            this.style.setProperty("--shadow-color", actualPromotion.shadowColor);
+            this.style.setProperty("--border-color", `${actualPromotion.shadowColor}66`);
         }
 
         if (this.dialog) {
-            if (ACTUAL_PROMOTION.offersPopupBg) {
-                this.dialog.style.backgroundImage = `url("${FILE_IMG_PREFIX}${ACTUAL_PROMOTION.offersPopupBg}")`;
+            if (actualPromotion.offersPopupBg) {
+                this.dialog.style.backgroundImage = `url("${fileImgPrefix}${actualPromotion.offersPopupBg}")`;
             }
-            if (ACTUAL_PROMOTION.rectColor) {
-                this.dialog.style.backgroundColor = ACTUAL_PROMOTION.rectColor;
+            if (actualPromotion.rectColor) {
+                this.dialog.style.backgroundColor = actualPromotion.rectColor;
             }
         }
 
         
         const logoImg = this.shadowRoot.querySelector("#promotion-logo-image");
         if (logoImg) {
-            const logoSrc = ACTUAL_PROMOTION.logo
-                ? FILE_IMG_PREFIX + ACTUAL_PROMOTION.logo
-                : (MODAL_POPUP_PRODUCTS.logoImg || "");
+            const logoSrc = actualPromotion.logo
+                ? fileImgPrefix + actualPromotion.logo
+                : (modalPopupProducts.logoImg || "");
             logoImg.src = logoSrc;
-            logoImg.alt = ACTUAL_PROMOTION.title || "Logo da Promoção";
+            logoImg.alt = actualPromotion.title || "Logo da Promoção";
         }
 
         
         if (!this._product) {
-            const productsList = MODAL_POPUP_PRODUCTS.products || [];
+            const productsList = modalPopupProducts.products || [];
             const activeProducts = productsList.filter(p => p.on !== false);
             const selectableProducts = activeProducts.length > 0 ? activeProducts : productsList;
 
@@ -469,7 +516,7 @@ class OfferModal extends HTMLElement {
         
         const productImg = this.shadowRoot.querySelector("#product-image");
         if (productImg) {
-            productImg.src = FILE_IMG_PREFIX + (this.product.i ?? "");
+            productImg.src = fileImgPrefix + (this.product.i ?? "");
             productImg.alt = this.product.n ?? "Produto em Oferta";
         }
 
@@ -512,10 +559,26 @@ class OfferModal extends HTMLElement {
             if (sessionStorage.getItem("modal_offer_shown") === "true") {
                 return;
             }
+        } catch (e) {}
+
+        if (!this.hasGlobalConfig()) {
+            this.fetchGlobalConfig();
+        }
+
+        if (!this.hasGlobalConfig()) {
+            return;
+        }
+
+        try {
             sessionStorage.setItem("modal_offer_shown", "true");
         } catch (e) {}
 
         this.hasShownModal = true;
+        if (this.handleMouseLeave) {
+            document.removeEventListener("mouseleave", this.handleMouseLeave);
+        }
+
+        this.render();
 
         if (this.dialog && !this.dialog.open) {
             if (typeof this.dialog.show === "function") {
