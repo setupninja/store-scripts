@@ -88,7 +88,7 @@ class OfferModal extends HTMLElement {
                 padding: 28px;
                 display: flex;
                 flex-direction: column;
-                gap: 16px;
+                gap: 32px;
                 border-radius: 0;
                 background: linear-gradient(135deg, rgba(5, 35, 1, 0.88) 0%, rgba(0, 0, 0, 0.88) 100%);
             }
