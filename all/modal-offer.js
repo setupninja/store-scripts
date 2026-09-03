@@ -298,7 +298,7 @@ class OfferModal extends HTMLElement {
                 <section class="content">
                     <div class="content-row close-pop-up">
                         <button id="close-modal" aria-label="Fechar modal">
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                         </button>
                     </div>
 
@@ -536,7 +536,7 @@ class OfferModal extends HTMLElement {
 
     open() {
         try {
-            if (sessionStorage.getItem("modal_offer_shown") === "true") {
+            if (sessionStorage.getItem("modal_offer_shown") === "true" || window.innerWidth <= 900) {
                 return;
             }
         } catch (e) {}
