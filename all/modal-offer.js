@@ -85,7 +85,7 @@ class OfferModal extends HTMLElement {
 
             .content {
                 position: relative;
-                padding: 10px 18px 28px 18px;
+                padding: 28px;
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
@@ -126,8 +126,8 @@ class OfferModal extends HTMLElement {
             }
 
             #promotion-logo-image {
-                width: 140px;
-                height: 140px;
+                width: auto;
+                height: 77px;
                 object-fit: contain;
             }
 
@@ -151,7 +151,6 @@ class OfferModal extends HTMLElement {
                 justify-content: center;
                 gap: 6px;
                 color: #fff;
-                padding: 4px 10px;
                 border-radius: 10px;
                 font-size: 14px;
                 font-weight: 700;
@@ -178,11 +177,6 @@ class OfferModal extends HTMLElement {
                 color: #ffffff;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
             }
 
             .offer-discount {
@@ -309,7 +303,7 @@ class OfferModal extends HTMLElement {
                     </div>
 
                     <div class="content-row promotion-logo">
-                        <img id="promotion-logo-image" width="140" height="140"/>
+                        <img id="promotion-logo-image" width="300" height="144"/>
                     </div>
 
                     <div class="content-row promotion-offer">
