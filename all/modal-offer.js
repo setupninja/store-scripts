@@ -153,7 +153,7 @@ class OfferModal extends HTMLElement {
                 color: #fff;
                 padding: 4px 10px;
                 border-radius: 10px;
-                font-size: 0.85rem;
+                font-size: 14px;
                 font-weight: 700;
                 width: fit-content;
                 letter-spacing: 0.5px;
@@ -172,7 +172,7 @@ class OfferModal extends HTMLElement {
 
             .offer-product-name {
                 font-family: "Barlow Condensed", sans-serif;
-                font-size: 1.85rem;
+                font-size: 30px;
                 font-weight: 800;
                 line-height: 1;
                 color: #ffffff;
@@ -195,7 +195,7 @@ class OfferModal extends HTMLElement {
             #discount-value {
                 color: #a1a1aa;
                 text-decoration: line-through;
-                font-size: 1.5rem;
+                font-size: 24px;
                 font-weight: bolder;
                 font-family: "Barlow Condensed";
             }
@@ -204,7 +204,7 @@ class OfferModal extends HTMLElement {
                 background-color: var(--primary-color);
                 color: var(--secondary-color);
                 font-weight: 800;
-                font-size: 0.8rem;
+                font-size: 13px;
                 padding: 2px 8px;
                 border-radius: 0;
                 letter-spacing: 0.5px;
@@ -216,7 +216,7 @@ class OfferModal extends HTMLElement {
             }
 
             .offer-price {
-                font-size: 2.4rem;
+                font-size: 38px;
                 font-weight: 900;
                 color: #00CE3E;
                 font-family: "Barlow Condensed";
@@ -228,7 +228,7 @@ class OfferModal extends HTMLElement {
                 justify-content: center;
                 background: var(--primary-color);
                 color: #fff;
-                font-size: 1rem;
+                font-size: 16px;
                 font-weight: 800;
                 text-decoration: none;
                 text-transform: uppercase;
@@ -281,11 +281,11 @@ class OfferModal extends HTMLElement {
                 }
 
                 .offer-product-name {
-                    font-size: 1.05rem;
+                    font-size: 17px;
                 }
 
                 .offer-price {
-                    font-size: 1.6rem;
+                    font-size: 26px;
                 }
 
                 #product-image {
@@ -463,20 +463,6 @@ class OfferModal extends HTMLElement {
         const actualPromotion = this.actualPromotion;
         const modalPopupProducts = this.modalPopupProducts;
         const fileImgPrefix = this.fileImgPrefix;
-
-        if (actualPromotion.primaryColor) {
-            this.style.setProperty("--primary-color", actualPromotion.primaryColor);
-        }
-        if (actualPromotion.secondaryColor) {
-            this.style.setProperty("--secondary-color", actualPromotion.secondaryColor);
-        }
-        if (actualPromotion.rectColor) {
-            this.style.setProperty("--rect-color", actualPromotion.rectColor);
-        }
-        if (actualPromotion.shadowColor) {
-            this.style.setProperty("--shadow-color", actualPromotion.shadowColor);
-            this.style.setProperty("--border-color", `${actualPromotion.shadowColor}66`);
-        }
 
         if (this.dialog) {
             if (actualPromotion.offersPopupBg) {
