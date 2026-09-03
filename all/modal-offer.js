@@ -104,8 +104,8 @@ class OfferModal extends HTMLElement {
                 background: rgba(255, 255, 255, 0.1);
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 border-radius: 100%;
-                width: 36px;
-                height: 36px;
+                width: 30px;
+                height: 30px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -166,7 +166,7 @@ class OfferModal extends HTMLElement {
             .offer-tag svg {
                 width: 20px;
                 height: 20px;
-                stroke: #fff;
+                stroke: #ff0000;
             }
 
             .offer-product-name {
@@ -309,7 +309,7 @@ class OfferModal extends HTMLElement {
                     <div class="content-row promotion-offer">
                         <div class="promotion-details">
                             <div class="offer-tag">
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
                                 <span>Oferta Imperdível</span>
                             </div>
                             <h2 class="offer-product-name" id="product-name">
