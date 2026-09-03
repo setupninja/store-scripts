@@ -59,7 +59,7 @@ class OfferModal extends HTMLElement {
                 position: relative;
                 margin: 0;
                 border: 0;
-                border-radius: 3px;
+                border-radius: 13px;
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
