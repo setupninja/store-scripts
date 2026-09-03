@@ -371,7 +371,7 @@ class OfferModal extends HTMLElement {
         if (!hasShownInSession) {
             this.exitIntentTimeout = setTimeout(() => {
                 this.canShowExitIntent = true;
-            }, 200);
+            }, 120000);
 
             this.handleMouseLeave = event => {
                 if (!this.canShowExitIntent || this.hasShownModal) return;
