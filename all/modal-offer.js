@@ -360,25 +360,31 @@ class OfferModal extends HTMLElement {
         this.render();
 
         
-        this.hasShownModal = false;
+        let hasShownInSession = false;
+        try {
+            hasShownInSession = sessionStorage.getItem("modal_offer_shown") === "true";
+        } catch (e) {}
+
+        this.hasShownModal = hasShownInSession;
         this.canShowExitIntent = false;
 
-        this.exitIntentTimeout = setTimeout(() => {
-            this.canShowExitIntent = true;
-        }, 200);
+        if (!hasShownInSession) {
+            this.exitIntentTimeout = setTimeout(() => {
+                this.canShowExitIntent = true;
+            }, 200);
 
-        
-        this.handleMouseLeave = event => {
-            if (!this.canShowExitIntent || this.hasShownModal) return;
+            this.handleMouseLeave = event => {
+                if (!this.canShowExitIntent || this.hasShownModal) return;
 
-            if (event.clientY <= 0 || !event.relatedTarget) {
-                this.hasShownModal = true;
-                this.open();
-                document.removeEventListener("mouseleave", this.handleMouseLeave);
-            }
-        };
+                if (event.clientY <= 0 || !event.relatedTarget) {
+                    this.hasShownModal = true;
+                    this.open();
+                    document.removeEventListener("mouseleave", this.handleMouseLeave);
+                }
+            };
 
-        document.addEventListener("mouseleave", this.handleMouseLeave);
+            document.addEventListener("mouseleave", this.handleMouseLeave);
+        }
     }
 
     disconnectedCallback() {
@@ -502,6 +508,15 @@ class OfferModal extends HTMLElement {
     }
 
     open() {
+        try {
+            if (sessionStorage.getItem("modal_offer_shown") === "true") {
+                return;
+            }
+            sessionStorage.setItem("modal_offer_shown", "true");
+        } catch (e) {}
+
+        this.hasShownModal = true;
+
         if (this.dialog && !this.dialog.open) {
             if (typeof this.dialog.show === "function") {
                 this.dialog.show();
