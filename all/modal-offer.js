@@ -72,6 +72,7 @@ class OfferModal extends HTMLElement {
                 opacity: 0;
                 transform: scale(0.92) translateY(14px);
                 transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                cursor: pointer;
             }
 
             #modal-surface.open dialog {
@@ -166,7 +167,7 @@ class OfferModal extends HTMLElement {
             .offer-tag svg {
                 width: 20px;
                 height: 20px;
-                stroke: #ff0000;
+                stroke: #fff;
             }
 
             .offer-product-name {
@@ -344,7 +345,23 @@ class OfferModal extends HTMLElement {
         this.surface = this.shadowRoot.querySelector("#modal-surface");
         this.dialog = this.shadowRoot.querySelector("dialog");
 
-        this.shadowRoot.querySelector("#close-modal").addEventListener("click", () => this.close());
+        this.shadowRoot.querySelector("#close-modal").addEventListener("click", event => {
+            event.stopPropagation();
+            this.close();
+        });
+
+        this.dialog.addEventListener("click", event => {
+            if (event.target.closest("#close-modal")) {
+                return;
+            }
+            if (event.target.closest("a")) {
+                return;
+            }
+            const productUrl = this.getProductUrl();
+            if (productUrl) {
+                window.open(productUrl, "_blank", "noopener,noreferrer");
+            }
+        });
 
         this.surface.addEventListener("mousedown", event => {
             if (event.target === this.surface) {
