@@ -234,7 +234,7 @@ class OfferModal extends HTMLElement {
             }
 
             #buy-now-button:hover {
-                filter: brightness(1.1);
+                filter: brightness(.8);
                 transform: translateY(-2px);
             }
 
@@ -359,7 +359,6 @@ class OfferModal extends HTMLElement {
         this.fetchGlobalConfig();
         this.render();
 
-        
         let hasShownInSession = false;
         try {
             hasShownInSession = sessionStorage.getItem("modal_offer_shown") === "true";
