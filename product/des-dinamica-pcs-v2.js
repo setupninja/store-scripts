@@ -930,7 +930,7 @@ table.fps-table {
                     ]
                 },
                 {
-                    name: "Magnus", cpu: "Ryzen 7 5700G", gpu: "Vega 8", fonte: "500W80+", mobo: "A520", gabinete: "AquarioCurvoPreto", tier: "A", fps: [
+                    name: "Magnus", cpu: "Ryzen 5 5600GT", gpu: "Vega 8", fonte: "500W80+", mobo: "A520", gabinete: "AquarioCurvoPreto", tier: "A", fps: [
                         "Oi_4EAto-Nk", !0
                     ]
                 },
