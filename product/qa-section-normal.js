@@ -378,7 +378,7 @@ background: var(--primary_light, #171717);
   justify-content: center;
   align-items: center;
   padding: 16px;
-  z-index: 1000;
+  z-index: 99230069;
   animation: qa-fade-in .2s ease;
 }
 
