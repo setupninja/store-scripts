@@ -198,6 +198,9 @@ line-height: 1.2;
     gap: 4px;
     padding: 6px 10px;
     cursor: pointer;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
 }
 
 .gt-without-stock-header div {
@@ -210,6 +213,7 @@ line-height: 1.2;
 .gt-without-stock-header div svg {
     width: 20px;
     height: 20px;
+    fill: none;
 }
 
 .gt-without-stock-desc {
