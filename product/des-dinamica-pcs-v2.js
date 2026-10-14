@@ -166,8 +166,7 @@ line-height: 1.2;
     left: 10px;
     display: grid;
     grid-template-rows: auto 0fr;
-    width: 185px;
-    max-width: calc(100% - 20px);
+    width: fit-content;
     box-sizing: border-box;
     background: linear-gradient(77deg, rgba(48, 160, 0, 1) 0%, rgba(21, 71, 0, 1) 100%);
     border: 1px solid rgb(125, 125, 125);
@@ -193,10 +192,11 @@ line-height: 1.2;
 .gt-without-stock-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 4px;
+    gap: 0px;
     padding: 6px 10px;
+    width: fit-content;
     cursor: pointer;
     text-align: center;
     font-family: 'Barlow', sans-serif;
@@ -216,9 +216,15 @@ line-height: 1.2;
     fill: none;
 }
 
+.gt-without-stock-header div span {
+    font-family: "Syne", system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
 .gt-without-stock-desc {
     overflow: hidden;
     cursor: default;
+    width: fit-content;
+    max-width: 210px;
     padding: 0 10px;
     transition: padding 0.35s ease;
 }
@@ -226,7 +232,6 @@ line-height: 1.2;
 .gt-without-stock:hover .gt-without-stock-desc,
 .gt-without-stock.is-hover .gt-without-stock-desc {
     padding: 8px 10px 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .gt-without-stock-desc p {
@@ -1661,11 +1666,11 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                 ${componente == "Ryzen 5 5600GT" && gtOutStock ? `
                     <div class="gt-without-stock">
                         <div class="gt-without-stock-header">
-                            <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up preview-icon"><path d="m17 11-5-5-5 5"></path><path d="m17 18-5-5-5 5"></path></svg> <span>Upgrade Gratuito</span></div>
+                            <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up preview-icon"><path d="m17 11-5-5-5 5"></path><path d="m17 18-5-5-5 5"></path></svg> <span>UPGRADE GRATUITO</span></div>
                             <span>Ryzen 7 5700G</span>
                         </div>
                         <div class="gt-without-stock-desc">
-                            <p>Você recebe um upgrade gratuito para o AMD Ryzen 7 5700G sem nenhum custo adicional!</p>
+                            <p>Você compra este PC com um Ryzen 5 5600GT e recebe um upgrade para o Ryzen 7 5700G</p>
                         </div>
                     </div>
                 ` : ""}
@@ -1752,7 +1757,11 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                 }
 
                 const pDesc = document.createElement('p');
-                pDesc.textContent = getDesc(componente);
+                if (componente == "Ryzen 5 5600GT" && gtOutStock) {
+                    pDesc.textContent = `Você compra este PC com Ryzen 5 5600GT e recebe um upgrade gratuito para o Ryzen 7 5700G, com 8 núcleos e 16 threads para ainda mais desempenho em jogos e multitarefas.`;
+                } else {
+                    pDesc.textContent = getDesc(componente);
+                }
 
 
                 caractText.appendChild(h2Title);
