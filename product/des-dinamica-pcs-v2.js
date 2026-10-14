@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const docTitle = document.title.toLowerCase().trim()
     const pcsNamesExceptions = ["pc gamer square"]
     const isException = pcsNamesExceptions.some(exception => docTitle.includes(exception))
+    const ysys = new URL(window.location.href);
+    const gtOutStock = ysys.searchParams.has("gtoutsc")
+
     if (
         window.location.pathname.length < 4 ||
         !docTitle.includes("pc gamer")
@@ -40,20 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <style>  
 
-.product-description-item {
-    width: 100%;
-    line-height: 1.2;
-}
-
-.product-description-item div div {
-    color: #d1d5db;
-    font-size: 15px;
-    line-height: 1.7;
-    padding: 10px;
-    background-color: #151619;
-    border: 1px solid #2e3238;
-    border-radius: 8px;
-    margin-bottom: 25px;
+.product-description-item{
+line-height: 1.2;
 }
 
 .caracts-pc {
@@ -169,71 +160,43 @@ document.addEventListener('DOMContentLoaded', function () {
     position: relative;
 }
 
-.caract-image .free-upgrade-tag {
+.gt-without-stock:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.gt-without-stock {
     position: absolute;
     top: 10px;
     left: 10px;
     display: flex;
     flex-direction: column;
     width: fit-content;
-    /*max-width: 260px;*/
     box-sizing: border-box;
     background: linear-gradient(77deg, rgba(48, 160, 0, 1) 0%, rgba(21, 71, 0, 1) 100%);
     border: 1px solid rgb(125, 125, 125);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgb(0, 0, 0);
     overflow: hidden;
+    padding: 5px 10px;
     z-index: 2;
     cursor: default;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.caract-image .free-upgrade-tag:hover {
-    transform: scale(1.02);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-}
-
-.caract-image .free-upgrade-tag .free-upgrade-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 7px 12px 5px 12px;
-    font-family: 'Barlow', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    line-height: 1.1;
-    margin-bottom: 10px;
-}
-
-.caract-image .free-upgrade-tag .free-upgrade-header::before {
-    content: '';
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m17 11-5-5-5 5'/%3E%3Cpath d='m17 18-5-5-5 5'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    flex-shrink: 0;
-}
-
-.caract-image .free-upgrade-tag .free-upgrade-sub {
-    padding: 5px 12px 6px 12px;
-    background: rgba(0, 0, 0, 0.28);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-family: 'Barlow', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: #ffffff;
+    font-weight: bolder;
     text-align: center;
-    white-space: nowrap;
-    letter-spacing: 0.3px;
-    line-height: 1.2;
+    gap: 5px;
+}
+
+.gt-without-stock div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.gt-without-stock div svg {
+    width: 20px;
+    height: 20px;
 }
 
 .first-row-containers .caract-image {
@@ -283,6 +246,10 @@ document.addEventListener('DOMContentLoaded', function () {
     border-radius: 0 0 8px 8px;
 }
 
+.caract-text h2 span.ris {
+    text-decoration: line-through;
+}
+
 .caract-container .caract-text p {
     font-family: "Inter", sans-serif !important;
     font-weight: 500 !important;
@@ -300,16 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
     padding: 0 3px 0 3px !important;
     margin-block-start: 0.5em !important;
     margin-block-end: 0.5em !important;
-    font-size: 20px !important;
-    position: relative;
-}
-
-.caract-text h2 span.nw-upgrade {
-    background: #ff7300;
-    text-align: center;
-    line-height: 1;
-    padding: 2px 10px;
-    border-radius: 3px;
+    font-size: 26px !important;
 }
 
 .first-row-containers {
@@ -766,16 +724,6 @@ table.fps-table {
 
     .caract-highlight p {
     width: 100%;
-    }
-
-    .caract-image .free-upgrade-tag .free-upgrade-header {
-    font-size: 11px;
-    padding: 5px 8px 4px 8px;
-    }
-
-    .caract-image .free-upgrade-tag .free-upgrade-sub {
-    font-size: 10px;
-    padding: 4px 8px 5px 8px;
     }
 
 }
@@ -1646,12 +1594,8 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                 })
             }
 
-            const ysy = new URL(window.location.href);
-            const outGT = ysy.searchParams.has("gtouts");
-
             [selectedPc.gpu, selectedPc.cpu].forEach((componente, idx) => {
                 const componentLabel = getLabel(componente)
-                console.log(componente)
                 const caractContainer = document.createElement('div');
                 caractContainer.classList.add('caract-container');
 
@@ -1659,15 +1603,11 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                 caractImage.classList.add('caract-image');
                 caractImage.innerHTML = `
                 <img class="caract-image-img" loading="lazy" src="${getImage(componente)}" alt="${componentLabel}" title="${componentLabel}"/>
-                ${outGT && selectedPc.cpu == componente ? `
-                <div class="free-upgrade-tag">
-                    <div class="free-upgrade-header">
-                        <span>Upgrade Gratuito</span>
+                ${componente == "Ryzen 5 5600GT" && gtOutStock ? `
+                    <div class="gt-without-stock">
+                        <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up preview-icon"><path d="m17 11-5-5-5 5"/><path d="m17 18-5-5-5 5"/></svg> <span>Upgrade Gratuito</span></div>
+                        <span>Ryzen 7 5700G</span>
                     </div>
-                    <div class="free-upgrade-sub">
-                        <span>Ryzen 5 5600GT &rarr; Ryzen 7 5700G</span>
-                    </div>
-                </div>
                 ` : ""}
                 `;
 
@@ -1682,7 +1622,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                     highlightContainer.classList.add('caract-highlight')
                     highlightContainer.innerHTML = `
         <div class="caract-highlight-header"> 
-        <img loading="lazy" src="${FILE_IMG_PREFIX + foundHighlight[1].img}" alt="${foundHighlight[0]}" />
+            <img loading="lazy" src="${FILE_IMG_PREFIX + foundHighlight[1].img}" alt="${foundHighlight[0]}" />
             <p class="caract-highlight-title">${foundHighlight[0]}</p>             
             </div>
             <div class="caract-highlight-desc hidden">
@@ -1734,12 +1674,9 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                 }
 
                 const h2Title = document.createElement('h2');
-                // h2Title.textContent = componentLabel;
 
-                if (outGT && componentLabel.includes("Ryzen 5 5600GT")) {
-                    const lt = componentLabel.split("Ryzen")
-                    
-                    h2Title.innerHTML = `${lt[0]} <span class="nw-upgrade">Ryzen 7 5700G</span>`;
+                if (componente == "Ryzen 5 5600GT" && gtOutStock) {
+                    h2Title.innerHTML = `AMD <span class="ris">Ryzen 5 5600GT</span> Ryzen 7 5700G`;
                 } else {
                     h2Title.textContent = componentLabel;
                 }
@@ -1779,7 +1716,9 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
 
                 const caractImage = document.createElement('div');
                 caractImage.classList.add('caract-image');
-                caractImage.innerHTML = `<img class="caract-image-img" loading="lazy" src=${getImage(componente)} alt="${componentLabel}" title="${componentLabel}" />`;
+                caractImage.innerHTML = `
+                    <img class="caract-image-img" loading="lazy" src=${getImage(componente)} alt="${componentLabel}" title="${componentLabel}" />
+                `;
 
                 const foundHighlight = caractsHighlightEntries.find(([, value]) => value.regex.test(componente))
 
