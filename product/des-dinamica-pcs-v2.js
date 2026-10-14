@@ -160,43 +160,79 @@ line-height: 1.2;
     position: relative;
 }
 
-.gt-without-stock:hover {
-    transform: scale(1.02);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-}
-
 .gt-without-stock {
     position: absolute;
     top: 10px;
     left: 10px;
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
+    display: grid;
+    grid-template-rows: auto 0fr;
+    width: 185px;
+    max-width: calc(100% - 20px);
     box-sizing: border-box;
     background: linear-gradient(77deg, rgba(48, 160, 0, 1) 0%, rgba(21, 71, 0, 1) 100%);
     border: 1px solid rgb(125, 125, 125);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgb(0, 0, 0);
     overflow: hidden;
-    padding: 5px 10px;
+    padding: 0;
     z-index: 2;
-    cursor: default;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+    transition: grid-template-rows 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     font-weight: bolder;
     text-align: center;
-    gap: 5px;
 }
 
-.gt-without-stock div {
+.gt-without-stock:hover,
+.gt-without-stock.is-hover {
+    grid-template-rows: auto 1fr;
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.gt-without-stock-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.gt-without-stock-header div {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 4px;
 }
 
-.gt-without-stock div svg {
+.gt-without-stock-header div svg {
     width: 20px;
     height: 20px;
+}
+
+.gt-without-stock-desc {
+    overflow: hidden;
+    cursor: default;
+    padding: 0 10px;
+    transition: padding 0.35s ease;
+}
+
+.gt-without-stock:hover .gt-without-stock-desc,
+.gt-without-stock.is-hover .gt-without-stock-desc {
+    padding: 8px 10px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gt-without-stock-desc p {
+    text-align: center;
+    font-family: 'Barlow', sans-serif !important;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #ffffff;
+    margin: 0 !important;
 }
 
 .first-row-containers .caract-image {
@@ -248,6 +284,21 @@ line-height: 1.2;
 
 .caract-text h2 span.ris {
     text-decoration: line-through;
+    opacity: 0.6;
+    font-size: 0.85em;
+    margin-right: 4px;
+}
+
+.caract-text h2 span.upgrade-destaque {
+    display: inline-block;
+    background: linear-gradient(77deg, rgba(48, 160, 0, 1) 0%, rgba(21, 71, 0, 1) 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    padding: 2px 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
 }
 
 .caract-container .caract-text p {
@@ -1570,7 +1621,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
             secondRowContainers.classList.add('second-row-containers');
 
             function toggleAllHighlights() {
-                const allHighlightContainers = document.querySelectorAll('.caract-highlight')
+                const allHighlightContainers = document.querySelectorAll('.caract-highlight, .gt-without-stock')
                 const allViewers = document.querySelectorAll('.caract-highlight-viewer')
                 let highlightsAreVisible = true
 
@@ -1605,11 +1656,26 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                 <img class="caract-image-img" loading="lazy" src="${getImage(componente)}" alt="${componentLabel}" title="${componentLabel}"/>
                 ${componente == "Ryzen 5 5600GT" && gtOutStock ? `
                     <div class="gt-without-stock">
-                        <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up preview-icon"><path d="m17 11-5-5-5 5"/><path d="m17 18-5-5-5 5"/></svg> <span>Upgrade Gratuito</span></div>
-                        <span>Ryzen 7 5700G</span>
+                        <div class="gt-without-stock-header">
+                            <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up preview-icon"><path d="m17 11-5-5-5 5"></path><path d="m17 18-5-5-5 5"></path></svg> <span>Upgrade Gratuito</span></div>
+                            <span>Ryzen 7 5700G</span>
+                        </div>
+                        <div class="gt-without-stock-desc">
+                            <p>Você recebe um upgrade gratuito para o AMD Ryzen 7 5700G sem nenhum custo adicional!</p>
+                        </div>
                     </div>
                 ` : ""}
                 `;
+
+                const gtWithoutStockEl = caractImage.querySelector('.gt-without-stock')
+                if (gtWithoutStockEl) {
+                    gtWithoutStockEl.addEventListener('mouseenter', () => {
+                        gtWithoutStockEl.classList.add('is-hover')
+                    })
+                    gtWithoutStockEl.addEventListener('mouseleave', () => {
+                        gtWithoutStockEl.classList.remove('is-hover')
+                    })
+                }
 
                 const foundHighlight = caractsHighlightEntries.find(([, value]) => value.regex.test(componente))
 
@@ -1676,7 +1742,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                 const h2Title = document.createElement('h2');
 
                 if (componente == "Ryzen 5 5600GT" && gtOutStock) {
-                    h2Title.innerHTML = `AMD <span class="ris">Ryzen 5 5600GT</span> Ryzen 7 5700G`;
+                    h2Title.innerHTML = `AMD <span class="ris">Ryzen 5 5600GT</span> <span class="upgrade-destaque">Ryzen 7 5700G</span>`;
                 } else {
                     h2Title.textContent = componentLabel;
                 }
