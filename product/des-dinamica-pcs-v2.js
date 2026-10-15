@@ -218,6 +218,7 @@ line-height: 1.2;
 
 .gt-without-stock-header div span {
     font-family: "Syne", system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 14px;
 }
 
 .gt-without-stock-desc {
