@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const docTitle = document.title.toLowerCase().trim()
     const pcsNamesExceptions = ["pc gamer square"]
     const isException = pcsNamesExceptions.some(exception => docTitle.includes(exception))
-    const gtOutStock = false
+    const ysys = new URL(window.location.href);
+    const gtOutStock = ysys.searchParams.has("gtoutsc")
 
     if (
         window.location.pathname.length < 4 ||
