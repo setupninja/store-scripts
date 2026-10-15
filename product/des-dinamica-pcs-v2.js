@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const pcsNamesExceptions = ["pc gamer square"]
     const isException = pcsNamesExceptions.some(exception => docTitle.includes(exception))
     const ysys = new URL(window.location.href);
-    const gtOutStock = ysys.searchParams.has("gtoutsc")
+    const gtOutStock = false
 
     if (
         window.location.pathname.length < 4 ||
@@ -1774,7 +1774,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
 
                 const pDesc = document.createElement('p');
                 if (idx === 0 && selectedPc.cpu == "Ryzen 5 5600GT" && gtOutStock) {
-                    pDesc.textContent = `Com o upgrade para o Ryzen 7 5700G, você recebe os gráficos integrados Radeon Vega 8, com 8 núcleos gráficos e frequência de até 2000 MHz. Aproveite um desempenho gráfico superior ao da Vega 7 em diversos cenários, ideal para jogos competitivos e títulos populares, como Valorant, CS2 e GTA V, com qualidade gráfica ajustável conforme o jogo. Também conta com suporte ao AMD FSR em jogos compatíveis.`;
+                    pDesc.textContent = `Com o upgrade para o Ryzen 7 5700G, você recebe os gráficos Radeon Vega 8, com 8 núcleos gráficos e frequência de até 2000 MHz, oferecendo mais desempenho que a Vega 7 em jogos como Valorant, CS2 e GTA V, além de suporte ao AMD FSR em títulos compatíveis.`;
                 } else if (componente == "Ryzen 5 5600GT" && gtOutStock) {
                     pDesc.textContent = `Você compra este PC com Ryzen 5 5600GT e recebe um upgrade gratuito para o Ryzen 7 5700G, com 8 núcleos e 16 threads para ainda mais desempenho em jogos e multitarefas.`;
                 } else {
