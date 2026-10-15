@@ -240,7 +240,7 @@ line-height: 1.2;
     font-family: 'Barlow', sans-serif !important;
     font-size: 11px;
     font-weight: 500;
-    line-height: 1.35;
+    line-height: 1;
     color: #ffffff;
     margin: 0 !important;
 }
@@ -1347,7 +1347,7 @@ table.fps-table {
 
                 "Vega 7": "A Radeon Vega 7 é um gráfico integrado de alta perfomance, ideal para jogos em HD. Com 7 núcleos gráficos, proporciona gráficos detalhados e desempenho fluido.",
 
-                "Vega 8": "A Radeon Vega 8 é um gráfico integrado de alta perfomance, ideal para jogos em HD. Com 8 núcleos gráficos, proporciona gráficos detalhados e desempenho fluido.",
+                "Vega 8": "A Radeon Vega 8 é um gráfico integrado de alta performance, ideal para jogos em HD e Full HD. Com 8 núcleos gráficos operando a 2000 MHz, proporciona gráficos detalhados, suporte a FSR e excelente fluidez em jogos.",
 
                 "HD Graphics": "O Intel HD Graphics é um gráfico integrado de boa performance, ideal para jogos em HD.",
 
@@ -1675,6 +1675,17 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         </div>
                     </div>
                 ` : ""}
+                ${idx === 0 && selectedPc.cpu == "Ryzen 5 5600GT" && gtOutStock ? `
+                    <div class="gt-without-stock">
+                        <div class="gt-without-stock-header">
+                            <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-up preview-icon"><path d="m17 11-5-5-5 5"></path><path d="m17 18-5-5-5 5"></path></svg> <span>UPGRADE GRATUITO</span></div>
+                            <span>Vega 8</span>
+                        </div>
+                        <div class="gt-without-stock-desc">
+                            <p>Com o upgrade para o Ryzen 7 5700G, você também recebe os gráficos integrados Radeon Vega 8</p>
+                        </div>
+                    </div>
+                ` : ""}
                 `;
 
                 const gtWithoutStockEl = caractImage.querySelector('.gt-without-stock')
@@ -1751,14 +1762,20 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
 
                 const h2Title = document.createElement('h2');
 
-                if (componente == "Ryzen 5 5600GT" && gtOutStock) {
+                if (idx === 0 && selectedPc.cpu == "Ryzen 5 5600GT" && gtOutStock) {
+                    h2Title.innerHTML = componentLabel === "Vega 8"
+                        ? `<span class="upgrade-destaque">Vega 8</span>`
+                        : `<span class="ris">${componentLabel}</span> <span class="upgrade-destaque">Vega 8</span>`;
+                } else if (componente == "Ryzen 5 5600GT" && gtOutStock) {
                     h2Title.innerHTML = `AMD <span class="ris">Ryzen 5 5600GT</span> <span class="upgrade-destaque">Ryzen 7 5700G</span>`;
                 } else {
                     h2Title.textContent = componentLabel;
                 }
 
                 const pDesc = document.createElement('p');
-                if (componente == "Ryzen 5 5600GT" && gtOutStock) {
+                if (idx === 0 && selectedPc.cpu == "Ryzen 5 5600GT" && gtOutStock) {
+                    pDesc.textContent = `Com o upgrade para o Ryzen 7 5700G, você recebe os gráficos integrados Radeon Vega 8, com 8 núcleos gráficos e frequência de até 2000 MHz. Aproveite um desempenho gráfico superior ao da Vega 7 em diversos cenários, ideal para jogos competitivos e títulos populares, como Valorant, CS2 e GTA V, com qualidade gráfica ajustável conforme o jogo. Também conta com suporte ao AMD FSR em jogos compatíveis.`;
+                } else if (componente == "Ryzen 5 5600GT" && gtOutStock) {
                     pDesc.textContent = `Você compra este PC com Ryzen 5 5600GT e recebe um upgrade gratuito para o Ryzen 7 5700G, com 8 núcleos e 16 threads para ainda mais desempenho em jogos e multitarefas.`;
                 } else {
                     pDesc.textContent = getDesc(componente);
