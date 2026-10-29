@@ -92,6 +92,8 @@ class OfferModal extends HTMLElement {
                 gap: 42px;
                 border-radius: 0;
                 background: linear-gradient(135deg, rgba(5, 35, 1, 0.88) 0%, rgba(0, 0, 0, 0.88) 100%);
+                cursor: pointer;
+                user-select: none;
             }
 
             .close-pop-up {
@@ -344,24 +346,31 @@ class OfferModal extends HTMLElement {
     connectedCallback() {
         this.surface = this.shadowRoot.querySelector("#modal-surface");
         this.dialog = this.shadowRoot.querySelector("dialog");
+        this.content = this.shadowRoot.querySelector(".content");
 
-        this.shadowRoot.querySelector("#close-modal").addEventListener("click", event => {
-            event.stopPropagation();
-            this.close();
-        });
+        const closeModalBtn = this.shadowRoot.querySelector("#close-modal");
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener("click", event => {
+                event.stopPropagation();
+                this.close();
+            });
+        }
 
-        this.dialog.addEventListener("click", event => {
-            if (event.target.closest("#close-modal")) {
-                return;
-            }
-            if (event.target.closest("a")) {
-                return;
-            }
-            const productUrl = this.getProductUrl();
-            if (productUrl) {
-                window.open(productUrl, "_blank", "noopener,noreferrer");
-            }
-        });
+        if (this.content) {
+            this.content.addEventListener("click", event => {
+                if (event.target.closest("#close-modal") || event.target.closest(".close-pop-up")) {
+                    return;
+                }
+                const productUrl = this.getProductUrl();
+                if (productUrl) {
+                    const link = event.target.closest("a");
+                    if (link) {
+                        event.preventDefault();
+                    }
+                    window.location.href = productUrl;
+                }
+            });
+        }
 
         this.surface.addEventListener("mousedown", event => {
             if (event.target === this.surface) {
@@ -424,6 +433,18 @@ class OfferModal extends HTMLElement {
             style: "currency",
             currency: "BRL",
         }).format(Number(value));
+    }
+
+    getProductUrl() {
+        if (!this.product || !this.product.u) return "";
+        try {
+            const baseUrl = "https://www.setupninja.com.br/" + (this.product.u ?? "");
+            const url = new URL(baseUrl);
+            url.searchParams.set("utm_source", "modal-oferta");
+            return url.toString();
+        } catch (e) {
+            return "https://www.setupninja.com.br/" + (this.product.u ?? "");
+        }
     }
 
     fetchGlobalConfig() {
@@ -517,23 +538,16 @@ class OfferModal extends HTMLElement {
         }
 
         
-        const baseUrl = "https://www.setupninja.com.br/" + (this.product.u ?? "");
-        const url = new URL(baseUrl);
-        url.searchParams.set("utm_source", "modal-oferta");
-        const productUrl = url.toString();
+        const productUrl = this.getProductUrl();
 
         const buyNowBtn = this.shadowRoot.querySelector("#buy-now-button");
         if (buyNowBtn) {
             buyNowBtn.href = productUrl;
-            buyNowBtn.target = "_blank";
-            buyNowBtn.rel = "noopener noreferrer";
         }
 
         const productLink = this.shadowRoot.querySelector("#product-link");
         if (productLink) {
             productLink.href = productUrl;
-            productLink.target = "_blank";
-            productLink.rel = "noopener noreferrer";
         }
 
         
