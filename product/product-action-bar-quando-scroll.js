@@ -25,8 +25,7 @@
     const FabButton = {
         _el: null,
         _baseBottom: null,
-        _chatRoot: null,
-        _chatBaseBottom: null,
+        _chatNodes: null,
         _chatDir: null,
 
         init() {
@@ -36,22 +35,38 @@
             }
         },
 
-        _getChatRoot() {
-            if (this._chatRoot) return this._chatRoot;
+        _getChatNodes() {
+            if (this._chatNodes) return this._chatNodes;
             const host = document.getElementById("ninja-chat-host");
-            const root = host?.shadowRoot?.querySelector(".ia-widget-root");
+            if (!host?.shadowRoot) return null;
+
+            const root = host.shadowRoot.querySelector(".ia-widget-root");
+            const fabWrap = host.shadowRoot.querySelector(".ia-fab-wrap");
+            if (!root && !fabWrap) return null;
+
+            const nodes = [];
             if (root) {
-                this._chatRoot = root;
-                this._chatBaseBottom ??= parseFloat(getComputedStyle(root).bottom);
+                nodes.push({
+                    el: root,
+                    baseBottom: parseFloat(getComputedStyle(root).bottom) || 30
+                });
             }
-            return root;
+            if (fabWrap) {
+                nodes.push({
+                    el: fabWrap,
+                    baseBottom: parseFloat(getComputedStyle(fabWrap).bottom) || 30
+                });
+            }
+
+            this._chatNodes = nodes;
+            return this._chatNodes;
         },
 
         _slideChat(dir, bar, tries = 0) {
             this._chatDir = dir;
-            const root = this._getChatRoot();
+            const nodes = this._getChatNodes();
 
-            if (!root) {
+            if (!nodes || nodes.length === 0) {
                 if (dir === "up" && tries < CHAT_MAX_RETRIES) {
                     setTimeout(() => {
                         if (this._chatDir === dir) this._slideChat(dir, bar, tries + 1);
@@ -62,9 +77,16 @@
 
             const targetBottom = bar.getBoundingClientRect().height + 30;
 
-            root.style.bottom = dir === "up"
-                ? `${targetBottom}px`
-                : `${this._chatBaseBottom}px`;
+            nodes.forEach(({ el, baseBottom }) => {
+                if (dir === "up") {
+                    el.style.setProperty("bottom", `${targetBottom}px`, "important");
+                } else {
+                    el.style.removeProperty("bottom");
+                    if (!isNaN(baseBottom)) {
+                        el.style.bottom = `${baseBottom}px`;
+                    }
+                }
+            });
         },
 
         slide(dir, bar) {
