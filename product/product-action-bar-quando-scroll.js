@@ -11,7 +11,7 @@
         priceFinal: "#form-add-cart .product-values .product-action-price .product-price-final span.total",
         creditParcel: '#form-add-cart .product-values .product-action-price.creditcard div[data-price-method="creditcard"] span.parcel',
         creditParcelPrice: '#form-add-cart .product-values .product-action-price.creditcard div[data-price-method="creditcard"] span.parcel-price',
-        fabButton: ".fab-button",
+        fabButton: ".setup-ninja-fab",
         ninjaChat: "#ia-fab-wrap",
         footer: "footer.footer",
     };
