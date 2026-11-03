@@ -36,37 +36,29 @@
         },
 
         _getChatNodes() {
-            if (this._chatNodes) return this._chatNodes;
             const host = document.getElementById("ninja-chat-host");
             if (!host?.shadowRoot) return null;
 
-            const root = host.shadowRoot.querySelector(".ia-widget-root");
-            const fabWrap = host.shadowRoot.querySelector(".ia-fab-wrap");
-            if (!root && !fabWrap) return null;
+            const isMobile = window.matchMedia("(max-width: 640px)").matches;
+            const targetEl = isMobile
+                ? host.shadowRoot.querySelector(".ia-fab-wrap")
+                : host.shadowRoot.querySelector(".ia-widget-root");
 
-            const nodes = [];
-            if (root) {
-                nodes.push({
-                    el: root,
-                    baseBottom: parseFloat(getComputedStyle(root).bottom) || 30
-                });
-            }
-            if (fabWrap) {
-                nodes.push({
-                    el: fabWrap,
-                    baseBottom: parseFloat(getComputedStyle(fabWrap).bottom) || 30
-                });
-            }
+            if (!targetEl) return null;
 
-            this._chatNodes = nodes;
-            return this._chatNodes;
+            const otherEl = isMobile
+                ? host.shadowRoot.querySelector(".ia-widget-root")
+                : host.shadowRoot.querySelector(".ia-fab-wrap");
+            if (otherEl) otherEl.style.removeProperty("bottom");
+
+            return targetEl;
         },
 
         _slideChat(dir, bar, tries = 0) {
             this._chatDir = dir;
-            const nodes = this._getChatNodes();
+            const el = this._getChatNodes();
 
-            if (!nodes || nodes.length === 0) {
+            if (!el) {
                 if (dir === "up" && tries < CHAT_MAX_RETRIES) {
                     setTimeout(() => {
                         if (this._chatDir === dir) this._slideChat(dir, bar, tries + 1);
@@ -75,18 +67,12 @@
                 return;
             }
 
-            const targetBottom = bar.getBoundingClientRect().height + 30;
-
-            nodes.forEach(({ el, baseBottom }) => {
-                if (dir === "up") {
-                    el.style.setProperty("bottom", `${targetBottom}px`, "important");
-                } else {
-                    el.style.removeProperty("bottom");
-                    if (!isNaN(baseBottom)) {
-                        el.style.bottom = `${baseBottom}px`;
-                    }
-                }
-            });
+            if (dir === "up") {
+                const targetBottom = bar.getBoundingClientRect().height + 30;
+                el.style.setProperty("bottom", `${targetBottom}px`, "important");
+            } else {
+                el.style.removeProperty("bottom");
+            }
         },
 
         slide(dir, bar) {
