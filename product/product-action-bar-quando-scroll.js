@@ -1,1 +1,323 @@
-(()=>{if("/"===window.location.pathname)return;let t=!1,n=!0;function e(e){if(!e||t)return;t=!0;const i=document.createElement("div");i.classList.add("alternative-pd-style");const a=e.querySelector("#form-add-cart .product-values .product-action-price .product-price-discount")?.textContent||"",o=e.querySelector("#form-add-cart .product-values .product-action-price .product-price-final span.total")?.textContent||"",r=(e.querySelector('#form-add-cart .product-values .product-action-price.creditcard div[data-price-method="creditcard"] span.total'),e.querySelector('#form-add-cart .product-values .product-action-price.creditcard div[data-price-method="creditcard"] span.parcel')?.textContent||""),l=e.querySelector('#form-add-cart .product-values .product-action-price.creditcard div[data-price-method="creditcard"] span.parcel-price')?.textContent||"",d=(e.querySelector("#form-add-cart .product-buy .product-action-buy"),e.querySelector(".product-title h1.h1"),{_fabEl:null,_originalBottom:null,init:function(){if(this._fabEl=document.querySelector(".fab-button"),!this._fabEl)return;const t=window.getComputedStyle(this._fabEl);this._originalBottom=parseFloat(t.bottom)},slideChat:function(t,n,k=0){const h=document.getElementById("ninja-chat-host"),r=h&&h.shadowRoot&&h.shadowRoot.querySelector(".ia-widget-root");this._chatDir=t;if(!r){if("up"===t&&k<5)setTimeout(()=>this._chatDir===t&&this.slideChat(t,n,k+1),1000);return}if(null==this._chatOriginal)this._chatOriginal=parseFloat(getComputedStyle(r).bottom);r.style.bottom="up"===t?`${this._chatOriginal+n.offsetHeight+10}px`:`${this._chatOriginal}px`},slideFab:function(t,n){this.slideChat(t,n);if(!this._fabEl&&(this._fabEl=document.querySelector(".fab-button"),this._fabEl&&null===this._originalBottom)){const t=window.getComputedStyle(this._fabEl);this._originalBottom=parseFloat(t.bottom)}if(n&&this._fabEl&&null!==this._originalBottom)if("up"===t){const t=10,e=n.offsetHeight;this._fabEl.style.bottom=`${this._originalBottom+e+t}px`}else this._fabEl.style.bottom=`${this._originalBottom}px`}});d.init();const c=e.querySelector("#form-add-cart");c.style.position="relative";document.querySelector("footer.footer").style="padding-bottom: 95px;",i.innerHTML=`\n                <div>\n                    <div class="price-container">\n                        <div class="prices-div"><span class="alternative-pd-discount">${a}</span><span class="alternative-pd-price">${o} <span class="pay-mth">no pix</span></span></div>\n                        <div class="credit-card-price">em <span class="credit-card-parcel-hightlight">até ${r} ${l}</span> sem juros</div>\n                    </div>\n                    <div class="action-buy-product">\n                        <button type="submit" id="alternative-pd-action-buy-button">Comprar</button>\n                    </div>\n                </div>\n            `;let s=!0;i.querySelector("#alternative-pd-action-buy-button")?.addEventListener("click",t=>{s?(s=!1,t.target.classList.add("alt-buy-button-loading"),t.target.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#e6e6e6"><path fill-rule="evenodd" d="M13.917 7A6.002 6.002 0 0 0 2.083 7H1.071a7.002 7.002 0 0 1 13.858 0h-1.012z"/></svg>',setTimeout(()=>{t.target.classList.remove("alt-buy-button-loading"),t.target.innerHTML="Comprar",s=!0},4e3)):t.preventDefault()}),c.append(i);const p=document.createElement("style");p.innerHTML='\n            .alternative-pd-style {\n    position: fixed;\n    bottom: -400px;\n    left: 0;\n    width: 100%;\n    z-index: 9999;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    background-color: #25252d;\n    padding: 10px 30px;\n    gap: 8px;\n    transition: bottom .5s ease-in-out;\n    box-shadow: 0 -6px 7px rgba(0,0,0,.2);\n}\n\n.alternative-pd-style #alternative-pd-action-buy-button.alt-buy-button-loading {\n    background-color: #01aa34;\n}\n\n.alternative-pd-style #alternative-pd-action-buy-button.alt-buy-button-loading svg {\n    animation: loadingSpin 1s linear infinite;\n    width: 50px;\n    height: 50px;\n    opacity: .8;\n}\n\n@keyframes loadingSpin {\n    from {\n        transform: rotate(0deg);\n    }\n    to {\n        transform: rotate(360deg);\n    }\n}\n\n.alternative-pd-style > div {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    gap: 8px;\n    max-width: 1600px;\n    margin: 0 auto;\n    width: 100%;\n}\n\n.alternative-pd-style.show-alternative {\n    bottom: -1px;\n}\n\n.alternative-pd-style .prices-div {\n    display: flex;\n    flex-direction: column;\n}\n\n.alternative-pd-style .prices-div span {\n    line-height: 22px;\n}\n\n.alternative-pd-style .prices-div .alternative-pd-discount {\n    color: #CF0000;\n    font-weight: 700;\n    text-decoration: line-through;\n    font-size: 18px;\n    margin-bottom: 3px;\n}\n\n.alternative-pd-style .prices-div .alternative-pd-price {\n    color: #00CE3E;\n    font-weight: 700;\n    font-size: 22px;\n}\n\n.alternative-pd-style .prices-div .alternative-pd-price .pay-mth {\n    color: #00CE3E;\n    position: relative;\n    font-size: .55em;\n    opacity: .8;\n    text-decoration: none !important;\n    display: inline-flex;\n    align-items: center;\n    gap: 3px;\n}\n\n.alternative-pd-style .prices-div .alternative-pd-price .pay-mth::after {\n  content: "";\n  width: 17px;\n  height: 17px;\n  display: inline-block;\n  background-color: #00CE3E;\n  -webkit-mask: url(\'data:image/svg+xml;utf8,<svg fill="%2300CE3E" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M11.917 11.71a2.05 2.05 0 0 1-1.454-.602l-2.1-2.1a.4.4 0 0 0-.551 0l-2.108 2.108a2.04 2.04 0 0 1-1.454.602h-.414l2.66 2.66c.83.83 2.177.83 3.007 0l2.667-2.668zM4.25 4.282c.55 0 1.066.214 1.454.602l2.108 2.108a.39.39 0 0 0 .552 0l2.1-2.1a2.04 2.04 0 0 1 1.453-.602h.253L9.503 1.623a2.127 2.127 0 0 0-3.007 0l-2.66 2.66h.414z"/><path d="m14.377 6.496-1.612-1.612a.3.3 0 0 1-.114.023h-.733c-.379 0-.75.154-1.017.422l-2.1 2.1a1.005 1.005 0 0 1-1.425 0L5.268 5.32a1.45 1.45 0 0 0-1.018-.422h-.9a.3.3 0 0 1-.109-.021L1.623 6.496c-.83.83-.83 2.177 0 3.008l1.618 1.618a.3.3 0 0 1 .108-.022h.901c.38 0 .75-.153 1.018-.421L7.375 8.57a1.034 1.034 0 0 1 1.426 0l2.1 2.1c.267.268.638.421 1.017.421h.733q.06.001.114.024l1.612-1.612c.83-.83.83-2.178 0-3.008z"/></svg>\') no-repeat center / contain;\n  mask: url(\'data:image/svg+xml;utf8,<svg fill="%2300CE3E" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M11.917 11.71a2.05 2.05 0 0 1-1.454-.602l-2.1-2.1a.4.4 0 0 0-.551 0l-2.108 2.108a2.04 2.04 0 0 1-1.454.602h-.414l2.66 2.66c.83.83 2.177.83 3.007 0l2.667-2.668zM4.25 4.282c.55 0 1.066.214 1.454.602l2.108 2.108a.39.39 0 0 0 .552 0l2.1-2.1a2.04 2.04 0 0 1 1.453-.602h.253L9.503 1.623a2.127 2.127 0 0 0-3.007 0l-2.66 2.66h.414z"/><path d="m14.377 6.496-1.612-1.612a.3.3 0 0 1-.114.023h-.733c-.379 0-.75.154-1.017.422l-2.1 2.1a1.005 1.005 0 0 1-1.425 0L5.268 5.32a1.45 1.45 0 0 0-1.018-.422h-.9a.3.3 0 0 1-.109-.021L1.623 6.496c-.83.83-.83 2.177 0 3.008l1.618 1.618a.3.3 0 0 1 .108-.022h.901c.38 0 .75-.153 1.018-.421L7.375 8.57a1.034 1.034 0 0 1 1.426 0l2.1 2.1c.267.268.638.421 1.017.421h.733q.06.001.114.024l1.612-1.612c.83-.83.83-2.178 0-3.008z"/></svg>\') no-repeat center / contain;\n}\n\n.alternative-pd-style .credit-card-price {\n    font-size: 15px;\n}\n\n.alternative-pd-style .credit-card-price .credit-card-parcel-hightlight {\n    color: #ff7300;\n    font-size: 1.1em;\n}\n\n.alternative-pd-style .product-name-alternative {\n    margin-bottom: 6px;\n}\n\n.alternative-pd-style .product-name-alternative h2 {\n    font-size: 14px;\n    opacity: .8;\n}\n\n.alternative-pd-style .action-buy-product {\n    margin-top: 4px;\n}\n\n.alternative-pd-style .action-buy-product button {\n    width: 100%;\n    background-color: #00CE3E;\n    font-weight: 400;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 15px;\n    color: #fff;\n    padding: 10px 20px;\n    border: 0;\n    outline: 0;\n    text-transform: uppercase;\n    box-shadow: 0 0 5px rgba(0,0,0,.4);\n    cursor: pointer;\n    height: 50px;\n    width: 200px;\n}\n\n@media (max-width: 768px) {\n    .alternative-pd-style > div{\n        flex-direction: row;\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 520px) {\n    .alternative-pd-style > div {\n        flex-direction: column;\n        align-items: stretch;\n        gap: 10px;\n    }\n        \n    .alternative-pd-style {\n        padding: 10px 10px;\n    }\n        \n    .alternative-pd-style #alternative-pd-action-buy-button {\n            \n    }\n\n    .alternative-pd-style > div {\n        flex-direction: column;\n    }\n    \n    .alternative-pd-style .price-container, .alternative-pd-style .action-buy-product {\n        width: 100%;\n    }\n\n    .alternative-pd-style .credit-card-price {\n        font-size: 13px;\n    }\n\n    .alternative-pd-style .action-buy-product button {\n        width: 100%;\n    }\n}',document.head.appendChild(p);new IntersectionObserver(([t])=>{t.isIntersecting&&!n?(n=!0,d.slideFab("down",i),i.classList.remove("show-alternative")):!t.isIntersecting&&n&&(n=!1,d.slideFab("up",i),i.classList.add("show-alternative"))},{root:null,threshold:0}).observe(e)}const i=new MutationObserver(()=>{const t=document.querySelector(".product-info .product-info-content");t&&(e(t),i.disconnect())});setTimeout(()=>{i.disconnect()},1e4),i.observe(document.body,{childList:!0,subtree:!0});const a=document.querySelector(".product-info .product-info-content");a&&(e(a),i.disconnect())})();
+(() => {
+    if (window.location.pathname === "/") return;
+
+    let initialized = false;
+    let isVisible = true;
+
+    const SELECTORS = {
+        productInfo: ".product-info .product-info-content",
+        formAddCart: "#form-add-cart",
+        priceDiscount: "#form-add-cart .product-values .product-action-price .product-price-discount",
+        priceFinal: "#form-add-cart .product-values .product-action-price .product-price-final span.total",
+        creditParcel: '#form-add-cart .product-values .product-action-price.creditcard div[data-price-method="creditcard"] span.parcel',
+        creditParcelPrice: '#form-add-cart .product-values .product-action-price.creditcard div[data-price-method="creditcard"] span.parcel-price',
+        fabButton: ".fab-button",
+        ninjaChat: "#ia-fab-wrap",
+        footer: "footer.footer",
+    };
+
+    const LOADING_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#e6e6e6"><path fill-rule="evenodd" d="M13.917 7A6.002 6.002 0 0 0 2.083 7H1.071a7.002 7.002 0 0 1 13.858 0h-1.012z"/></svg>';
+    const BUY_COOLDOWN_MS = 4000;
+    const OBSERVER_TIMEOUT_MS = 10000;
+    const CHAT_RETRY_DELAY_MS = 1000;
+    const CHAT_MAX_RETRIES = 5;
+
+    const FabButton = {
+        _el: null,
+        _baseBottom: null,
+        _chatRoot: null,
+        _chatBaseBottom: null,
+        _chatDir: null,
+
+        init() {
+            this._el = document.querySelector(SELECTORS.fabButton);
+            if (this._el) {
+                this._baseBottom = parseFloat(getComputedStyle(this._el).bottom);
+            }
+        },
+
+        _getChatRoot() {
+            if (this._chatRoot) return this._chatRoot;
+            const host = document.getElementById("ninja-chat-host");
+            const root = host?.shadowRoot?.querySelector(".ia-widget-root");
+            if (root) {
+                this._chatRoot = root;
+                this._chatBaseBottom ??= parseFloat(getComputedStyle(root).bottom);
+            }
+            return root;
+        },
+
+        _slideChat(dir, bar, tries = 0) {
+            this._chatDir = dir;
+            const root = this._getChatRoot();
+
+            if (!root) {
+                if (dir === "up" && tries < CHAT_MAX_RETRIES) {
+                    setTimeout(() => {
+                        if (this._chatDir === dir) this._slideChat(dir, bar, tries + 1);
+                    }, CHAT_RETRY_DELAY_MS);
+                }
+                return;
+            }
+
+            const targetBottom = bar.getBoundingClientRect().height + 30;
+
+            root.style.bottom = dir === "up"
+                ? `${targetBottom}px`
+                : `${this._chatBaseBottom}px`;
+        },
+
+        slide(dir, bar) {
+            this._slideChat(dir, bar);
+
+            if (!this._el) {
+                this._el = document.querySelector(SELECTORS.fabButton);
+                if (this._el) this._baseBottom = parseFloat(getComputedStyle(this._el).bottom);
+            }
+            if (!this._el || this._baseBottom == null) return;
+
+            const targetBottom = bar.getBoundingClientRect().height + 30;
+
+            this._el.style.bottom = dir === "up"
+                ? `${targetBottom}px`
+                : `${this._baseBottom}px`;
+        },
+    };
+
+    const STYLES = `
+.alternative-pd-style {
+    position: fixed;
+    bottom: -400px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #25252d;
+    padding: 10px 30px;
+    gap: 8px;
+    transition: bottom .5s ease-in-out;
+    box-shadow: 0 -6px 7px rgba(0,0,0,.2);
+}
+
+.alternative-pd-style > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.alternative-pd-style.show-alternative {
+    bottom: -1px;
+}
+
+.alternative-pd-style .prices-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.alternative-pd-style .prices-div span {
+    line-height: 22px;
+}
+
+.alternative-pd-style .prices-div .alternative-pd-discount {
+    color: #CF0000;
+    font-weight: 700;
+    text-decoration: line-through;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.alternative-pd-style .prices-div .alternative-pd-price {
+    color: #00CE3E;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.alternative-pd-style .prices-div .alternative-pd-price .pay-mth {
+    color: #00CE3E;
+    position: relative;
+    font-size: .55em;
+    opacity: .8;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.alternative-pd-style .prices-div .alternative-pd-price .pay-mth::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    background-color: #00CE3E;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg fill="%2300CE3E" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M11.917 11.71a2.05 2.05 0 0 1-1.454-.602l-2.1-2.1a.4.4 0 0 0-.551 0l-2.108 2.108a2.04 2.04 0 0 1-1.454.602h-.414l2.66 2.66c.83.83 2.177.83 3.007 0l2.667-2.668zM4.25 4.282c.55 0 1.066.214 1.454.602l2.108 2.108a.39.39 0 0 0 .552 0l2.1-2.1a2.04 2.04 0 0 1 1.453-.602h.253L9.503 1.623a2.127 2.127 0 0 0-3.007 0l-2.66 2.66h.414z"/><path d="m14.377 6.496-1.612-1.612a.3.3 0 0 1-.114.023h-.733c-.379 0-.75.154-1.017.422l-2.1 2.1a1.005 1.005 0 0 1-1.425 0L5.268 5.32a1.45 1.45 0 0 0-1.018-.422h-.9a.3.3 0 0 1-.109-.021L1.623 6.496c-.83.83-.83 2.177 0 3.008l1.618 1.618a.3.3 0 0 1 .108-.022h.901c.38 0 .75-.153 1.018-.421L7.375 8.57a1.034 1.034 0 0 1 1.426 0l2.1 2.1c.267.268.638.421 1.017.421h.733q.06.001.114.024l1.612-1.612c.83-.83.83-2.178 0-3.008z"/></svg>') no-repeat center / contain;
+    mask: url('data:image/svg+xml;utf8,<svg fill="%2300CE3E" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M11.917 11.71a2.05 2.05 0 0 1-1.454-.602l-2.1-2.1a.4.4 0 0 0-.551 0l-2.108 2.108a2.04 2.04 0 0 1-1.454.602h-.414l2.66 2.66c.83.83 2.177.83 3.007 0l2.667-2.668zM4.25 4.282c.55 0 1.066.214 1.454.602l2.108 2.108a.39.39 0 0 0 .552 0l2.1-2.1a2.04 2.04 0 0 1 1.453-.602h.253L9.503 1.623a2.127 2.127 0 0 0-3.007 0l-2.66 2.66h.414z"/><path d="m14.377 6.496-1.612-1.612a.3.3 0 0 1-.114.023h-.733c-.379 0-.75.154-1.017.422l-2.1 2.1a1.005 1.005 0 0 1-1.425 0L5.268 5.32a1.45 1.45 0 0 0-1.018-.422h-.9a.3.3 0 0 1-.109-.021L1.623 6.496c-.83.83-.83 2.177 0 3.008l1.618 1.618a.3.3 0 0 1 .108-.022h.901c.38 0 .75-.153 1.018-.421L7.375 8.57a1.034 1.034 0 0 1 1.426 0l2.1 2.1c.267.268.638.421 1.017.421h.733q.06.001.114.024l1.612-1.612c.83-.83.83-2.178 0-3.008z"/></svg>') no-repeat center / contain;
+}
+
+.alternative-pd-style .credit-card-price {
+    font-size: 15px;
+}
+
+.alternative-pd-style .credit-card-price .credit-card-parcel-hightlight {
+    color: #ff7300;
+    font-size: 1.1em;
+}
+
+.alternative-pd-style .action-buy-product {
+    margin-top: 4px;
+}
+
+.alternative-pd-style .action-buy-product button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #00CE3E;
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 0;
+    outline: 0;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+    cursor: pointer;
+}
+
+.alternative-pd-style #alternative-pd-action-buy-button.alt-buy-button-loading {
+    background-color: #01aa34;
+}
+
+.alternative-pd-style #alternative-pd-action-buy-button.alt-buy-button-loading svg {
+    animation: loadingSpin 1s linear infinite;
+    width: 50px;
+    height: 50px;
+    opacity: .8;
+}
+
+@keyframes loadingSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@media (max-width: 520px) {
+    .alternative-pd-style {
+        padding: 10px;
+    }
+
+    .alternative-pd-style > div {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .alternative-pd-style .price-container,
+    .alternative-pd-style .action-buy-product {
+        width: 100%;
+    }
+
+    .alternative-pd-style .credit-card-price {
+        font-size: 13px;
+    }
+
+    .alternative-pd-style .action-buy-product button {
+        width: 100%;
+    }
+}`;
+
+    function initTarget(target) {
+        if (!target || initialized) return;
+        initialized = true;
+
+        const text = (sel) => target.querySelector(sel)?.textContent || "";
+        const pdPrice       = text(SELECTORS.priceDiscount);
+        const pdDiscount    = text(SELECTORS.priceFinal);
+        const ccParcel      = text(SELECTORS.creditParcel);
+        const ccParcelPrice = text(SELECTORS.creditParcelPrice);
+
+        const styleEl = document.createElement("style");
+        styleEl.textContent = STYLES;
+        document.head.appendChild(styleEl);
+
+        const bar = document.createElement("div");
+        bar.className = "alternative-pd-style";
+        bar.innerHTML = `
+            <div>
+                <div class="price-container">
+                    <div class="prices-div">
+                        <span class="alternative-pd-discount">${pdPrice}</span>
+                        <span class="alternative-pd-price">${pdDiscount} <span class="pay-mth">no pix</span></span>
+                    </div>
+                    <div class="credit-card-price">em <span class="credit-card-parcel-hightlight">até ${ccParcel} ${ccParcelPrice}</span> sem juros</div>
+                </div>
+                <div class="action-buy-product">
+                    <button type="submit" id="alternative-pd-action-buy-button">Comprar</button>
+                </div>
+            </div>`;
+
+        const buyBtn = bar.querySelector("#alternative-pd-action-buy-button");
+        let canClick = true;
+
+        buyBtn.addEventListener("click", (e) => {
+            if (!canClick) { e.preventDefault(); return; }
+            canClick = false;
+
+            buyBtn.classList.add("alt-buy-button-loading");
+            buyBtn.innerHTML = LOADING_SVG;
+
+            setTimeout(() => {
+                buyBtn.classList.remove("alt-buy-button-loading");
+                buyBtn.textContent = "Comprar";
+                canClick = true;
+            }, BUY_COOLDOWN_MS);
+        });
+
+        const form = target.querySelector(SELECTORS.formAddCart);
+        form.style.position = "relative";
+        form.append(bar);
+
+        const footer = document.querySelector(SELECTORS.footer);
+        if (footer) {
+            const barHeight = bar.getBoundingClientRect().height || 65;
+            footer.style.paddingBottom = `${barHeight + 30}px`;
+        }
+
+        FabButton.init();
+
+        const io = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting === isVisible) return;
+                isVisible = entry.isIntersecting;
+
+                if (isVisible) {
+                    bar.classList.remove("show-alternative");
+                    FabButton.slide("down", bar);
+                } else {
+                    bar.classList.add("show-alternative");
+                    FabButton.slide("up", bar);
+                }
+            },
+            { root: null, threshold: 0 },
+        );
+        io.observe(target);
+    }
+
+    const target = document.querySelector(SELECTORS.productInfo);
+    if (target) { initTarget(target); return; }
+
+    const domObs = new MutationObserver(() => {
+        const el = document.querySelector(SELECTORS.productInfo);
+        if (el) { domObs.disconnect(); initTarget(el); }
+    });
+
+    domObs.observe(document.body, { childList: true, subtree: true });
+    setTimeout(() => domObs.disconnect(), OBSERVER_TIMEOUT_MS);
+})();
