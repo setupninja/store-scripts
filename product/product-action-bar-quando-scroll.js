@@ -46,6 +46,15 @@
 
             if (!targetEl) return null;
 
+            if (!targetEl.style.transition?.includes("bottom")) {
+                const currentTransition = targetEl.style.transition;
+                targetEl.style.setProperty(
+                    "transition",
+                    currentTransition ? `${currentTransition}, bottom .5s ease-in-out` : "bottom .5s ease-in-out",
+                    "important"
+                );
+            }
+
             const otherEl = isMobile
                 ? host.shadowRoot.querySelector(".ia-widget-root")
                 : host.shadowRoot.querySelector(".ia-fab-wrap");
@@ -83,6 +92,13 @@
                 if (this._el) this._baseBottom = parseFloat(getComputedStyle(this._el).bottom);
             }
             if (!this._el || this._baseBottom == null) return;
+
+            if (!this._el.style.transition?.includes("bottom")) {
+                const currentTransition = this._el.style.transition;
+                this._el.style.transition = currentTransition
+                    ? `${currentTransition}, bottom .5s ease-in-out`
+                    : "bottom .5s ease-in-out";
+            }
 
             const targetBottom = bar.getBoundingClientRect().height + 30;
 
@@ -217,29 +233,12 @@
 }
 
 @media (max-width: 520px) {
-    .alternative-pd-style {
-        padding: 10px;
-    }
-
-    .alternative-pd-style > div {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-    }
-
+    .alternative-pd-style {padding: 10px;}
+    .alternative-pd-style > div {flex-direction: column;align-items: stretch;gap: 10px;}
     .alternative-pd-style .price-container,
-    .alternative-pd-style .action-buy-product {
-        width: 100%;
-    }
-
-    .alternative-pd-style .credit-card-price {
-        font-size: 13px;
-    }
-
-    .alternative-pd-style .action-buy-product button {
-        width: 100%;
-    }
-}`;
+    .alternative-pd-style .action-buy-product {width: 100%;}
+    .alternative-pd-style .credit-card-price {font-size: 13px;}
+    .alternative-pd-style .action-buy-product button {width: 100%;}}`;
 
     function initTarget(target) {
         if (!target || initialized) return;
