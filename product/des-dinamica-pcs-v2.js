@@ -1097,7 +1097,7 @@ table.fps-table {
                     ]
                 },
                 {
-                    name: "Loki V", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "600W80+", mobo: "B450", gabinete: "AquarioPreto", waterCooler: "Water Cooler 120mm", tier: "S", fps: [
+                    name: "Loki V", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "600W80+", mobo: "B550", gabinete: "AquarioPreto", waterCooler: "Water Cooler 120mm", tier: "S", fps: [
                         "vA2xcP2tkPg", !0
                     ]
                 },
