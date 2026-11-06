@@ -91,7 +91,7 @@ class OfferModal extends HTMLElement {
                 flex-direction: column;
                 gap: 42px;
                 border-radius: 0;
-                background: linear-gradient(135deg, rgba(5, 35, 1, 0.88) 0%, rgba(0, 0, 0, 0.88) 100%);
+                background: linear-gradient(135deg, rgb(0 0 0 / 64%) 0%, rgba(0, 0, 0, 0.88) 100%);
                 cursor: pointer;
                 user-select: none;
             }
