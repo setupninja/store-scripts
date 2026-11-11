@@ -6,6 +6,8 @@
     const CHECK_INTERVAL_MS = 10 * 60 * 1000
     const MAX_CONCURRENT_CHECKS = 3
 
+    console.log("NOTRESP")
+
     function getAll(store) {
         return new Promise((resolve, reject) => {
             const request = store.getAll()
