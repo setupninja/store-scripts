@@ -1,6 +1,10 @@
 (async () => {
     //if (localStorage.getItem("dev-mode") !== "true") return;
 
+    const INSTANCE_KEY = "__setupNinjaNotificationHistoryInitialized";
+    if (window[INSTANCE_KEY]) return;
+    window[INSTANCE_KEY] = true;
+
     const DB_NAME = "SetupNinjaDB";
     const STORE_NAME = "answer_status";
     const IS_MOBILE = window.innerWidth <= 1199;
@@ -20,9 +24,8 @@
     };
 
     const style = document.createElement("style");
+    style.id = "notification-history-styles";
     style.innerHTML = `
-    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
     .nh-overlay {
       position: fixed;
       inset: 0;
@@ -254,10 +257,20 @@
       color: inherit;
     }    
   `;
-    document.head.appendChild(style);
+    if (!document.getElementById(style.id)) {
+        document.head.appendChild(style);
+    }
+
+    let dbPromise;
+    let lastRenderedList = "";
+
+    function getDb() {
+        dbPromise ??= openDb(DB_NAME, STORE_NAME);
+        return dbPromise;
+    }
 
     async function fetchAnswers() {
-        const db = await openDb(DB_NAME, STORE_NAME);
+        const db = await getDb();
         const tx = db.transaction(STORE_NAME, "readonly");
         const store = tx.objectStore(STORE_NAME);
         return new Promise((resolve, reject) => {
@@ -279,7 +292,11 @@
         const list = document.querySelector("#notification-history-list");
         if (!list) return;
 
-        list.innerHTML = renderList(answers);
+        const nextList = renderList(answers);
+        if (nextList !== lastRenderedList) {
+            list.innerHTML = nextList;
+            lastRenderedList = nextList;
+        }
     };
 
     function renderAnsweredBlock({ answer }) {
@@ -351,7 +368,7 @@
         return el;
     }
 
-    function buildDrawer(answers) {
+    function buildDrawer(listHTML) {
         const drawer = document.createElement("div");
         drawer.classList.add("notification-history-modal");
         drawer.id = "notification-history-drawer";
@@ -369,7 +386,7 @@
           ${ICONS.close}
         </button>
       </div>
-      <ul id="notification-history-list">${renderList(answers)}</ul>
+      <ul id="notification-history-list">${listHTML}</ul>
     `;
 
         return drawer;
@@ -411,7 +428,10 @@
     }
 
     const header = document.querySelector("header.header");
-    if (!header) return;
+    if (!header) {
+        window[INSTANCE_KEY] = false;
+        return;
+    }
 
     const primaryRow = IS_MOBILE
         ? header.querySelector(".header-mobile .row.equal.no-gutters")
@@ -421,14 +441,20 @@
         ? null
         : header.querySelector(".header-fixed .justify-content-between.align-items-center")
 
-    if (!primaryRow) return;
+    if (!primaryRow) {
+        window[INSTANCE_KEY] = false;
+        return;
+    }
 
     primaryRow.insertAdjacentHTML("beforeend", buildBellHTML());
     secondaryRow?.insertAdjacentHTML("beforeend", buildBellHTML());
 
     const allBells = [...header.querySelectorAll("#notification-history")];
     const primaryBell = allBells[0];
-    if (!primaryBell) return;
+    if (!primaryBell) {
+        window[INSTANCE_KEY] = false;
+        return;
+    }
 
     let answers;
     try {
@@ -438,8 +464,10 @@
         return;
     }
 
+    const initialList = renderList(answers);
     const overlay = buildOverlay();
-    const drawer = buildDrawer(answers);
+    const drawer = buildDrawer(initialList);
+    lastRenderedList = initialList;
 
     document.body.appendChild(overlay);
     document.body.appendChild(drawer);
