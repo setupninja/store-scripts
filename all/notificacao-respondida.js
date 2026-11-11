@@ -4,6 +4,7 @@
     const STORE_NAME_ANSWERED = "questions_answered"
     const API_URL = "https://customers-stn.vercel.app/"
     const CHECK_INTERVAL_MS = 10 * 60 * 1000
+    const MAX_CONCURRENT_CHECKS = 3
 
     function getAll(store) {
         return new Promise((resolve, reject) => {
@@ -29,16 +30,15 @@
         return (now - item.last_checked_at) >= CHECK_INTERVAL_MS
     })
 
-    const getAnswerFromAPI = async (id, retries = 3) => {
+    const getAnswerFromAPI = async (item, retries = 3) => {
+        const { id } = item
         try {
             const res = await fetch(API_URL + `questions/answers/_id/${id}`)
 
             if (res.status === 429) {
                 if (retries <= 0) {
-                    let dat = await idbGet(DB_NAME, STORE_NAME, id)
-                    if (!dat) return null
-                    dat.last_checked_at = Date.now()
-                    await idbSet(DB_NAME, STORE_NAME, id, dat)
+                    item.last_checked_at = Date.now()
+                    await idbSet(DB_NAME, STORE_NAME, id, item)
                     return null;
                 }
 
@@ -46,25 +46,24 @@
                 const waitMs = retryAfter ? parseInt(retryAfter) * 1000 : 60_000
 
                 await new Promise(resolve => setTimeout(resolve, waitMs))
-                return getAnswerFromAPI(id, retries - 1)
+                return getAnswerFromAPI(item, retries - 1)
             }
 
             const json = await res.json()
 
-            let dat = await idbGet(DB_NAME, STORE_NAME, id)
-            dat.last_checked_at = Date.now()
+            item.last_checked_at = Date.now()
 
             if (json?.data && json?.data?.length > 0) {
-                dat.status = "answered"
-                dat.answer = json.data[0].answer.text
+                item.status = "answered"
+                item.answer = json.data[0].answer.text
 
-                await idbSet(DB_NAME, STORE_NAME, id, dat)
+                await idbSet(DB_NAME, STORE_NAME, id, item)
                 await idbSet(DB_NAME, STORE_NAME_ANSWERED, id, json)
 
                 return json
             }
 
-            await idbSet(DB_NAME, STORE_NAME, id, dat)
+            await idbSet(DB_NAME, STORE_NAME, id, item)
             return null
         } catch (err) {
             console.error("Erro API:", err)
@@ -72,14 +71,31 @@
         }
     }
 
+    const answerChecks = new Map()
+
+    const checkAnswer = (item) => {
+        if (!answerChecks.has(item.id)) {
+            const check = item.status == "answered"
+                ? idbGet(DB_NAME, STORE_NAME_ANSWERED, item.id)
+                : getAnswerFromAPI(item)
+
+            answerChecks.set(item.id, check)
+        }
+
+        return answerChecks.get(item.id)
+    }
+
     const findNextAnswer = async (fromIndex = 0) => {
+        // Mantém a ordem original das notificações, mas antecipa verificações próximas.
+        for (let index = fromIndex; index < Math.min(fromIndex + MAX_CONCURRENT_CHECKS, pending.length); index++) {
+            checkAnswer(pending[index])
+        }
+
         for (let i = fromIndex; i < pending.length; i++) {
-            let result = null
-            if (pending[i].status == "answered") {
-                result = await idbGet(DB_NAME, STORE_NAME_ANSWERED, pending[i].id)
-            } else {
-                result = await getAnswerFromAPI(pending[i].id)
-            }
+            const result = await checkAnswer(pending[i])
+
+            const nextToPrefetch = i + MAX_CONCURRENT_CHECKS
+            if (nextToPrefetch < pending.length) checkAnswer(pending[nextToPrefetch])
 
             if (result) return { answer: result, index: i }
         }
