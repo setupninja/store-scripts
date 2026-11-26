@@ -1199,6 +1199,11 @@ table.fps-table {
                         "6VnRwbLd-J0", !0
                     ]
                 },
+                {
+                    name: "GB1749", cpu: "Ryzen 3 3200G", gpu: "Vega 8", fonte: "500W80+", mobo: "A320", gabinete: "MidTowerPreto", tier: "A", fps: [
+                        "AvlfFnnp614", !0
+                    ]
+                },
 
                 // POR SKU
                 {
@@ -2379,6 +2384,17 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "overwatch 2": 60
                     },
                     "Odim": {
+                        "gta5": 60,
+                        "roblox": 60,
+                        "euro truck 2": 60,
+                        "lol": 90,
+                        "free fire": 60,
+                        "minecraft": 180,
+                        "fortnite": 60,
+                        "valorant": 60,
+                        "overwatch 2": 60
+                    },
+                    "GB1749": {
                         "gta5": 60,
                         "roblox": 60,
                         "euro truck 2": 60,
