@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const ysys = new URL(window.location.href);
     const gtOutStock = false
 
-    if (window.location.pathname.length < 4 || (!docTitle.includes("pc gamer") || (isException && !(docTitle.includes("pc") && docTitle.includes("by asus"))))) { return }
+    if (window.location.pathname.length < 4 || (!docTitle.includes("pc gamer") || (isException && !(docTitle.includes("pc") && docTitle.includes("by asus"))))) {
+        console.log("DESC Return", docTitle)
+        return
+    }
 
     console.log("DESC PC Enter")
 
