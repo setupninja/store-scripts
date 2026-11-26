@@ -1452,7 +1452,7 @@ table.fps-table {
 
                 "RX 6600": "rx6600.png",
 
-                "RX 7600": "rx-7600-kezyw.jpg",
+                "RX 7600": "rx-7600-csb8l.png",
 
                 "GTX 1050 Ti": "gtx-1050-ti.png",
 
