@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (window.location.pathname.length < 4 || (!docTitle.includes("pc gamer") || (isException && !(docTitle.includes("pc") && docTitle.includes("by asus"))))) { return }
 
+    console.log("DESC PC Enter")
+
     const sku = document.querySelector(".product-title .product-reference span.text")
         ?.textContent
         ?.replace(/^REF:\s*/i, "")
