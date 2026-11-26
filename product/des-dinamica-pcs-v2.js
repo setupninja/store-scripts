@@ -1180,7 +1180,9 @@ table.fps-table {
                     ]
                 },
                 {
-                    name: "VeroX", cpu: "Ryzen 5 5500", gpu: "RX 7600", fonte: "650W80+", mobo: "A520", gabinete: "MancerCV700b", tier: "S"
+                    name: "VeroX", cpu: "Ryzen 5 5500", gpu: "RX 7600", fonte: "650W80+", mobo: "A520", gabinete: "MancerCV700b", tier: "S", fps: [
+                        "ZMvr4zWc05Q", !0
+                    ]
                 },
 
                 // POR SKU
