@@ -1184,6 +1184,14 @@ table.fps-table {
                         "ZMvr4zWc05Q", !0
                     ]
                 },
+                {
+                    name: "PC Agent Computer Powered By Asus, RTX 5070 Ti 16GB, AMD Ryzen 5700X, 32GB DDR4, SSD Nvme 1TB", cpu: "Ryzen 7 5700X", gpu: "RTX 5070 Ti", fonte: "850W80+", mobo: "B550", gabinete: "MSIPanoM100R", waterCooler: "Water Cooler 360mm", tier: "S", fps: [
+                        "SN1o3xZlYEM", !0
+                    ]
+                },
+                {
+                    name: "PC Agent Computer Powered By Asus, RTX 5060 Ti 16GB, AMD Ryzen 5700X, 32GB DDR4, SSD Nvme 1TB", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "850W80+", mobo: "B550", gabinete: "MSIPanoM100R", waterCooler: "Water Cooler 360mm", tier: "S"
+                },
 
                 // POR SKU
                 {
@@ -1350,6 +1358,8 @@ table.fps-table {
 
                 "RTX 5060": "A RTX 5060 é uma placa de vídeo de alta performance, perfeita para jogos modernos em Full HD Ultra e 2K. Com 8GB de memória GDDR7 e tecnologias como Ray Tracing e DLSS, proporciona gráficos detalhados e desempenho fluido.",
 
+                "RTX 5070 Ti": "A GeForce RTX 5070 Ti possui 16GB de memória GDDR7 e interface de 256-bit.",
+
                 "RTX 5070": "A RTX 5070 é uma placa de vídeo de altíssima performance, perfeita para jogos em 2K e 4K. Com 12GB de memória GDDR7 e tecnologias como Ray Tracing e DLSS, proporciona gráficos detalhados e desempenho fluido.",
 
                 "RTX 3060": "A RTX 3060 é uma placa de vídeo de alta performance, perfeita para jogos em Full HD e 2K. Com 12GB de memória GDDR6 e tecnologias como Ray Tracing e DLSS, proporciona gráficos detalhados e desempenho fluido.",
@@ -1394,6 +1404,8 @@ table.fps-table {
 
                 "NightGroddPreto": "Gabinete Mini-Tower preto com lateral de vidro e 5 fans.",
 
+                "MSIPanoM100R": "Gabinete Mini-Tower preto com lateral de vidro e 4 fans ARGB.",
+
                 "GABINETE SETUP NINJA": "O gabinete oferece um design moderno, compacto e com excelente fluxo de ar, ideal para manter os componentes do seu PC refrigerados, lateral de vidro temperado e suportando fans adicionais.",
 
                 "A520": "A placa-mãe A520 é uma excelente opção para montar um PC com processadores AMD AM4 Ryzen. Suporta memória DDR4, armazenamento M.2 e PCI Express 3.0.",
@@ -1413,6 +1425,8 @@ table.fps-table {
                 "650W80+": "A fonte 650W possui certificado 80 Plus, garantindo energia estável para todos os componentes do seu PC, assegurando menor desperdício de energia e margem para upgrades futuros.",
 
                 "600W80+": "A fonte 600W possui certificado 80 Plus, garantindo energia estável para todos os componentes do seu PC, assegurando menor desperdício de energia e margem para upgrades futuros.",
+
+                "850W80+": "A fonte 850W possui certificado 80 Plus Gold, PFC Ativo e é Full Modular.",
 
                 "Water Cooler": `O Water Cooler de ${selectedPc?.waterCooler?.split(" ")[2] || ""} oferece uma refrigeração eficiente para o processador, mantendo temperaturas baixas mesmo em uso intenso, além de proporcionar um visual moderno ao seu PC.`,
 
@@ -1529,7 +1543,13 @@ table.fps-table {
 
                 "NightGroddPreto": "nightgroddpreto-fd00t.jpg",
 
-                "MancerCV700b": "mancer-cv700b-nigka.jpg"
+                "MancerCV700b": "mancer-cv700b-nigka.jpg",
+
+                "RTX 5070 Ti": "rtx-5070-ti-miepp.png",
+                
+                "MSIPanoM100R": "msipanom100r-ot2v6.jpg",
+
+                "850W80+": "fonte-850w80-mz7ia.jpg",
             }
 
             const labels = {
@@ -1539,6 +1559,7 @@ table.fps-table {
                 "GB1787": "Gabinete " + selectedPc.name.split(" ")[0],
                 "MegalonPreto": "Gabinete Clanm Megalon Night",
                 "NightGroddPreto": "Gabinete Clanm Night Grodd",
+                "MSIPanoM100R": "Gabinete MSI MAG PANO M100R PZ",
                 "GabineteThermaltake": "View 380",
                 "Ryzen": "Processador AMD " + selectedPc.cpu,
                 "Intel": "Processador Intel Core " + selectedPc.cpu.split("Intel")[1],
@@ -1557,6 +1578,7 @@ table.fps-table {
                 "500W80+": "Fonte 500W 80 Plus",
                 "600W80+": "Fonte 600W 80 Plus",
                 "650W80+": "Fonte 650W 80 Plus",
+                "850W80+": "Fonte 850W 80 Plus",
                 "500W": "Fonte 500W",
                 "Water Cooler": selectedPc.waterCooler,
                 "GABINETE SETUP NINJA": "Gabinete Setup Ninja",
