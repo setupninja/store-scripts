@@ -2458,6 +2458,72 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "valorant": 250,
                         "cs2": 150
                     },
+                    "Sfinx": {
+                        "gta5": 80,
+                        "warzone": 80,
+                        "hogwarts legacy": 90,
+                        "red dead 2": 80,
+                        "cyberpunk 2077": 80,
+                        "bf6":  70,
+                        "fortnite": 200,
+                        "valorant": 240,
+                        "cs2": 180
+                    },
+                    "Stream": {
+                        "gta5": 80,
+                        "warzone": 80,
+                        "hogwarts legacy": 90,
+                        "red dead 2": 80,
+                        "cyberpunk 2077": 80,
+                        "bf6":  70,
+                        "fortnite": 200,
+                        "valorant": 240,
+                        "cs2": 180
+                    },
+                    "Upper": {
+                        "gta5": 80,
+                        "warzone": 80,
+                        "hogwarts legacy": 90,
+                        "red dead 2": 80,
+                        "cyberpunk 2077": 80,
+                        "bf6":  70,
+                        "fortnite": 200,
+                        "valorant": 240,
+                        "cs2": 180
+                    },
+                    "VeroX": {
+                        "gta5": 80,
+                        "warzone": 80,
+                        "hogwarts legacy": 90,
+                        "red dead 2": 80,
+                        "cyberpunk 2077": 80,
+                        "bf6":  70,
+                        "fortnite": 200,
+                        "valorant": 240,
+                        "cs2": 180
+                    },
+                    "PC Agent Computer Powered By Asus, RTX 5070 Ti 16GB, AMD Ryzen 5700X, 32GB DDR4, SSD Nvme 1TB": {
+                        "pubg": 180, 
+                        "warzone": 125,
+                        "hogwarts legacy": 150,
+                        "red dead 2": 100,
+                        "cyberpunk 2077": 80,
+                        "arcraiders": 150,
+                        "fortnite": 300,
+                        "valorant": 520,
+                        "cs2": 270
+                    },
+                    "PC Agent Computer Powered By Asus, RTX 5060 Ti 16GB, AMD Ryzen 5700X, 32GB DDR4, SSD Nvme 1TB": {
+                        "gta5": 135,
+                        "pubg":  190,
+                        "hogwarts legacy": 110,
+                        "red dead 2": 100,
+                        "cyberpunk 2077":  100,
+                        "bf6":  130,
+                        "fortnite":  210,
+                        "valorant":  450,
+                        "cs2": 360                    },
+
                     // POR SKU -- RTX 5070
                     "17543218718PR": {
                         "gta5": 90,
@@ -2632,7 +2698,9 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                     "cyberpunk 2077": "cyberpunk2077logo-1.png",
                     "warzone": "warzonelogo.png",
                     "spiderman 2": "spiderman2logo.png",
-                    "lol": "lollogo-1.png"
+                    "lol": "lollogo-1.png",
+                    "pubg": "logo-pubg-y9jem.png",
+                    "arcraiders": "logo-arc-raiders-boe0v.png"
                 }
 
 
