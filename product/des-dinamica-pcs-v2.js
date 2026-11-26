@@ -1190,7 +1190,9 @@ table.fps-table {
                     ]
                 },
                 {
-                    name: "PC Agent Computer Powered By Asus, RTX 5060 Ti 16GB, AMD Ryzen 5700X, 32GB DDR4, SSD Nvme 1TB", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "850W80+", mobo: "B550", gabinete: "MSIPanoM100R", waterCooler: "Water Cooler 360mm", tier: "S"
+                    name: "PC Agent Computer Powered By Asus, RTX 5060 Ti 16GB, AMD Ryzen 5700X, 32GB DDR4, SSD Nvme 1TB", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "850W80+", mobo: "B550", gabinete: "MSIPanoM100R", waterCooler: "Water Cooler 360mm", tier: "S", fps: [
+                        "6VnRwbLd-J0", !0
+                    ]
                 },
 
                 // POR SKU
