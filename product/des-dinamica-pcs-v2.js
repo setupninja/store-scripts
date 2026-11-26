@@ -5,11 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const ysys = new URL(window.location.href);
     const gtOutStock = false
 
-    if (
-        window.location.pathname.length < 4 ||
-        !docTitle.includes("pc gamer")
-        || isException
-    ) { return }
+    if ( window.location.pathname.length < 4 || (!docTitle.includes("pc gamer") || isException && !(docTitle.includes("pc") && docTitle.includes("by asus")))) { return }
 
     const sku = document.querySelector(".product-title .product-reference span.text")
         ?.textContent
@@ -1276,6 +1272,7 @@ table.fps-table {
             // prioridade para evitar que "Shadow I" seja escolhido para "Shadow II".
             let selectedPc
             let selectedPcNameLength = -1
+            
             for (const pc of data) {
                 if (
                     pc.name &&
