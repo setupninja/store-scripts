@@ -1558,6 +1558,8 @@ table.fps-table {
                 "MSIPanoM100R": "msipanom100r-ot2v6.jpg",
 
                 "850W80+": "fonte-850w80-mz7ia.jpg",
+
+                "Water Cooler 360mm": "watercooler-360mm-gdayu.jpg"
             }
 
             const labels = {
