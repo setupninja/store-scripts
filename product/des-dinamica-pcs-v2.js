@@ -1161,6 +1161,27 @@ table.fps-table {
                         "dYf0JYRy1Dg", !0
                     ]
                 },
+                {
+                    name: "Sfinx", cpu: "Ryzen 5 5500", gpu: "RX 7600", fonte: "500W80+", mobo: "A520", gabinete: "MegalonPreto", tier: "S",
+                    fps: [
+                        "ZMvr4zWc05Q", !0
+                    ]
+                },
+                {
+                    name: "Stream", cpu: "Ryzen 5 5500", gpu: "RX 7600", fonte: "500W80+", mobo: "A520", gabinete: "NightGroddPreto", tier: "S",
+                    fps: [
+                        "ZMvr4zWc05Q", !0
+                    ]
+                },
+                {
+                    name: "Upper", cpu: "Ryzen 5 5500", gpu: "RX 7600", fonte: "650W80+", mobo: "A520", gabinete: "NightGroddPreto", tier: "S",
+                    fps: [
+                        "ZMvr4zWc05Q", !0
+                    ]
+                },
+                {
+                    name: "VeroX", cpu: "Ryzen 5 5500", gpu: "RX 7600", fonte: "650W80+", mobo: "A520", gabinete: "MancerCV700b", tier: "S"
+                },
 
                 // POR SKU
                 {
@@ -1335,6 +1356,8 @@ table.fps-table {
 
                 "GTX 1050 Ti": "A GTX 1050 Ti é uma placa de vídeo de alta performance, perfeita para jogos em HD. Com 4GB de memória GDDR5, proporciona gráficos detalhados e desempenho fluido.",
 
+                "RX 7600": "A Radeon RX 7600 possui 8GB de memória GDDR6 e interface de 128-bit.",
+
                 "RX 6600": "A RX 6600 é uma placa de vídeo de alta performance, perfeita para jogos em Full HD. Com 8GB de memória GDDR6, proporciona gráficos detalhados e desempenho fluido.",
 
                 "RX 580": "A RX 580 é uma placa de vídeo de alta performance, perfeita para jogos em Full HD. Com 8GB de memória GDDR6, proporciona gráficos detalhados e desempenho fluido.",
@@ -1364,6 +1387,10 @@ table.fps-table {
                 "MidTower": "O gabinete é ideal para quem busca espaço e refrigeração, lateral em vidro temperado e suportando até 4 fans.",
 
                 "GabineteThermaltake": "O Gabinete Gamer Thermaltake View 380 é uma escolha robusta para quem busca estilo e resistência. Com estrutura em aço de alta resistência e lateral em vidro temperado, oferece visual moderno e proteção reforçada para seus componentes.",
+
+                "MegalonPreto": "O Gabinete Gamer Clanm Megalon Night é um mini tower em aço SPCC com painel lateral em vidro de 3 mm, suporte para placas-mãe mini-ITX e mATX e até 5 ventoinhas (3 inclusas).",
+
+                "NightGroddPreto": "Gabinete Mini-Tower preto com lateral de vidro e 5 fans.",
 
                 "GABINETE SETUP NINJA": "O gabinete oferece um design moderno, compacto e com excelente fluxo de ar, ideal para manter os componentes do seu PC refrigerados, lateral de vidro temperado e suportando fans adicionais.",
 
@@ -1423,6 +1450,8 @@ table.fps-table {
 
                 "RX 6600": "rx6600.png",
 
+                "RX 7600": "rx-7600-kezyw.jpg",
+
                 "GTX 1050 Ti": "gtx-1050-ti.png",
 
                 "GT 610": "gt-730-610-generica.png",
@@ -1464,6 +1493,8 @@ table.fps-table {
 
                 "GabineteThermaltake": "gabinete-thermaltake-lspcl.png",
 
+                "MegalonPreto": "megalon-preto-8zvye.jpg",
+
                 "GABINETE SETUP NINJA": "gb1796-transparente.png",
 
                 "A320": "a320.png",
@@ -1492,7 +1523,11 @@ table.fps-table {
 
                 "PLACA MÃE SETUP NINJA": "b450.png",
 
-                "PLACA DE VÍDEO SETUP NINJA": "rx-580.png"
+                "PLACA DE VÍDEO SETUP NINJA": "rx-580.png",
+
+                "NightGroddPreto": "nightgroddpreto-fd00t.jpg",
+
+                "MancerCV700b": "mancer-cv700b-nigka.jpg"
             }
 
             const labels = {
@@ -1500,6 +1535,8 @@ table.fps-table {
                 "Square": "Gabinete " + selectedPc.name.split(" ")[0],
                 "MidTower": "Gabinete " + selectedPc.name.split(" ")[0],
                 "GB1787": "Gabinete " + selectedPc.name.split(" ")[0],
+                "MegalonPreto": "Gabinete Clanm Megalon Night",
+                "NightGroddPreto": "Gabinete Clanm Night Grodd",
                 "GabineteThermaltake": "View 380",
                 "Ryzen": "Processador AMD " + selectedPc.cpu,
                 "Intel": "Processador Intel Core " + selectedPc.cpu.split("Intel")[1],
