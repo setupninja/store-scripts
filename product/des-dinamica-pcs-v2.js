@@ -5,7 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const ysys = new URL(window.location.href);
     const gtOutStock = false
 
-    if (window.location.pathname.length < 4 || (!docTitle.includes("pc gamer") || (isException && !(docTitle.includes("pc") && docTitle.includes("by asus"))))) {
+    if (
+        window.location.pathname.length < 4 ||
+        (!docTitle.includes("pc gamer") && !docTitle.includes("by asus")) ||
+        (isException && !(docTitle.includes("pc") && docTitle.includes("by asus")))
+    ) {
         console.log("DESC Return", docTitle)
         return
     }
@@ -16,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ?.textContent
         ?.replace(/^REF:\s*/i, "")
         ?.trim()
-    
+
     console.log(`SKU PC GAMER DESC ${sku}`)
 
     let finished = false;
@@ -1198,66 +1202,66 @@ table.fps-table {
 
                 // POR SKU
                 {
-                    alias:"By Thermaltake", sku: "17543218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17543218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17643218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17643218718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17543214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17543214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17643214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17643214718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
-                
-                
+
+
                 {
-                    alias:"By Thermaltake", sku: "17643213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17643213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17543213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17543213718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17541618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17541618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17641618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17641618718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5070", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "BR_ukNXS-UI", !0
                     ]
                 },
-                
-                
+
+
                 {
-                    alias:"By Thermaltake", sku: "17641614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17641614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17541614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17541614718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060 Ti", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "MK5JpoI1QDA", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17541613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17541613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
                 {
-                    alias:"By Thermaltake", sku: "17641613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
+                    alias: "By Thermaltake", sku: "17641613718PR", cpu: "Ryzen 7 5700X", gpu: "RTX 5060", fonte: "650W80+", mobo: "B550", gabinete: "GabineteThermaltake", tier: "S", fps: [
                         "CIp5E3cicZs", !0
                     ]
                 },
@@ -1277,7 +1281,7 @@ table.fps-table {
             // prioridade para evitar que "Shadow I" seja escolhido para "Shadow II".
             let selectedPc
             let selectedPcNameLength = -1
-            
+
             for (const pc of data) {
                 if (
                     pc.name &&
@@ -1550,7 +1554,7 @@ table.fps-table {
                 "MancerCV700b": "mancer-cv700b-nigka.jpg",
 
                 "RTX 5070 Ti": "rtx-5070-ti-miepp.png",
-                
+
                 "MSIPanoM100R": "msipanom100r-ot2v6.jpg",
 
                 "850W80+": "fonte-850w80-mz7ia.jpg",
@@ -2455,7 +2459,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "hogwarts legacy": 60,
                         "red dead 2": 60,
                         "cyberpunk 2077": 40,
-                        "bf6":  70,
+                        "bf6": 70,
                         "fortnite": 180,
                         "valorant": 250,
                         "cs2": 150
@@ -2466,7 +2470,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "hogwarts legacy": 90,
                         "red dead 2": 80,
                         "cyberpunk 2077": 80,
-                        "bf6":  70,
+                        "bf6": 70,
                         "fortnite": 200,
                         "valorant": 240,
                         "cs2": 180
@@ -2477,7 +2481,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "hogwarts legacy": 90,
                         "red dead 2": 80,
                         "cyberpunk 2077": 80,
-                        "bf6":  70,
+                        "bf6": 70,
                         "fortnite": 200,
                         "valorant": 240,
                         "cs2": 180
@@ -2488,7 +2492,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "hogwarts legacy": 90,
                         "red dead 2": 80,
                         "cyberpunk 2077": 80,
-                        "bf6":  70,
+                        "bf6": 70,
                         "fortnite": 200,
                         "valorant": 240,
                         "cs2": 180
@@ -2499,13 +2503,13 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "hogwarts legacy": 90,
                         "red dead 2": 80,
                         "cyberpunk 2077": 80,
-                        "bf6":  70,
+                        "bf6": 70,
                         "fortnite": 200,
                         "valorant": 240,
                         "cs2": 180
                     },
                     "PC Agent Computer Powered By Asus, RTX 5070 Ti 16GB, AMD Ryzen 5700X, 32GB DDR4, SSD Nvme 1TB": {
-                        "pubg": 180, 
+                        "pubg": 180,
                         "warzone": 125,
                         "hogwarts legacy": 150,
                         "red dead 2": 100,
@@ -2517,14 +2521,15 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                     },
                     "PC Agent Computer Powered By Asus, RTX 5060 Ti 16GB, AMD Ryzen 5700X, 32GB DDR4, SSD Nvme 1TB": {
                         "gta5": 135,
-                        "pubg":  190,
+                        "pubg": 190,
                         "hogwarts legacy": 110,
                         "red dead 2": 100,
-                        "cyberpunk 2077":  100,
-                        "bf6":  130,
-                        "fortnite":  210,
-                        "valorant":  450,
-                        "cs2": 360                    },
+                        "cyberpunk 2077": 100,
+                        "bf6": 130,
+                        "fortnite": 210,
+                        "valorant": 450,
+                        "cs2": 360
+                    },
 
                     // POR SKU -- RTX 5070
                     "17543218718PR": {
@@ -2532,7 +2537,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 150,
                         "hogwarts legacy": 120,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 100, 
+                        "cyberpunk 2077": 100,
                         "bf6": 200,
                         "fortnite": 190,
                         "valorant": 500,
@@ -2543,7 +2548,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 150,
                         "hogwarts legacy": 130,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 100, 
+                        "cyberpunk 2077": 100,
                         "bf6": 200,
                         "fortnite": 190,
                         "valorant": 500,
@@ -2554,7 +2559,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 150,
                         "hogwarts legacy": 120,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 100, 
+                        "cyberpunk 2077": 100,
                         "bf6": 200,
                         "fortnite": 190,
                         "valorant": 500,
@@ -2565,7 +2570,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 150,
                         "hogwarts legacy": 120,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 100, 
+                        "cyberpunk 2077": 100,
                         "bf6": 200,
                         "fortnite": 190,
                         "valorant": 500,
@@ -2577,7 +2582,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 120,
                         "hogwarts legacy": 90,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 120, 
+                        "cyberpunk 2077": 120,
                         "bf6": 120,
                         "fortnite": 280,
                         "valorant": 500,
@@ -2588,7 +2593,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 120,
                         "hogwarts legacy": 90,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 120, 
+                        "cyberpunk 2077": 120,
                         "bf6": 100,
                         "fortnite": 280,
                         "valorant": 500,
@@ -2599,7 +2604,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 120,
                         "hogwarts legacy": 90,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 120, 
+                        "cyberpunk 2077": 120,
                         "bf6": 120,
                         "fortnite": 280,
                         "valorant": 500,
@@ -2610,7 +2615,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 120,
                         "hogwarts legacy": 90,
                         "red dead 2": 100,
-                        "cyberpunk 2077": 120, 
+                        "cyberpunk 2077": 120,
                         "bf6": 120,
                         "fortnite": 280,
                         "valorant": 500,
@@ -2622,7 +2627,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 90,
                         "hogwarts legacy": 50,
                         "red dead 2": 80,
-                        "cyberpunk 2077": 80, 
+                        "cyberpunk 2077": 80,
                         "bf6": 120,
                         "fortnite": 220,
                         "valorant": 450,
@@ -2633,7 +2638,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 90,
                         "hogwarts legacy": 50,
                         "red dead 2": 80,
-                        "cyberpunk 2077": 80, 
+                        "cyberpunk 2077": 80,
                         "bf6": 120,
                         "fortnite": 240,
                         "valorant": 450,
@@ -2644,7 +2649,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 90,
                         "hogwarts legacy": 70,
                         "red dead 2": 80,
-                        "cyberpunk 2077": 80, 
+                        "cyberpunk 2077": 80,
                         "bf6": 120,
                         "fortnite": 220,
                         "valorant": 450,
@@ -2655,7 +2660,7 @@ Contando com uma ${getLabel(selectedPc.gpu)}, o PC Gamer ${selectedPc.alias || s
                         "warzone": 90,
                         "hogwarts legacy": 70,
                         "red dead 2": 80,
-                        "cyberpunk 2077": 80, 
+                        "cyberpunk 2077": 80,
                         "bf6": 120,
                         "fortnite": 220,
                         "valorant": 450,
