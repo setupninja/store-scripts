@@ -551,7 +551,7 @@ class OfferModal extends HTMLElement {
         }
 
         
-        this.shadowRoot.querySelector("#offer-price").textContent = this.formatPrice(this.product.p);
+        this.shadowRoot.querySelector("#offer-price").textContent = this.formatPrice(this.product.p * 0.85);
         this.shadowRoot.querySelector("#discount-value").textContent = this.formatPrice(this.product.pc);
 
         if (this.product.pc && this.product.pc > this.product.p) {
